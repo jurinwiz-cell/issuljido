@@ -182,7 +182,7 @@ input[type=text],input[type=tel],select,textarea{
 }
 textarea{min-height:96px;resize:vertical;line-height:1.6;padding:12px 14px}
 input::placeholder,textarea::placeholder{color:#93A69B;font-weight:400}
-input[type=text]:focus,select:focus,textarea:focus{
+input[type=text]:focus,input[type=tel]:focus,select:focus,textarea:focus{
   border-color:var(--brand);box-shadow:0 0 0 3px rgba(15,107,67,.12);outline:none;
 }
 select{
@@ -496,7 +496,7 @@ select{
           <div class="q" id="q1">
             <div class="q-head">
               <span class="qno">1</span>
-              <h3>가게 이름과 업종, 동네를 알려 주세요<span class="q-tag">필수 아님</span></h3>
+              <h3>가게 이름·업종과 위치를 알려 주세요<span class="q-tag">필수 아님</span></h3>
             </div>
             <p class="q-help">‘동네 가게’로 표시될 때 쓰는 정보예요. 모르는 항목은 넘어가셔도 돼요.</p>
 
@@ -555,6 +555,18 @@ select{
               <span class="lbl">동네 직접 입력</span>
               <input type="text" id="dongOther" name="dongOther" placeholder="예: 광명역 인근" maxlength="30">
             </label>
+
+            <label class="field" id="addressWrap">
+              <span class="lbl">가게 주소(구체적인 위치) <span class="opt-tag">선택</span></span>
+              <input type="text" id="address" name="address" placeholder="예: 경기도 광명시 오리로 856번길 12, 1층" maxlength="100" enterkeyhint="next" autocomplete="off">
+            </label>
+            <p class="hint">도로명 주소까지 알려 주시면 ‘있을지도’ 지도에 정확히 표시돼요. 모르면 동네만 골라 주셔도 괜찮아요.</p>
+
+            <label class="field" id="phoneWrap">
+              <span class="lbl">가게 전화번호 <span class="opt-tag">선택</span></span>
+              <input type="tel" id="phone" name="phone" placeholder="예: 02-2612-0000 / 010-0000-0000" maxlength="20" inputmode="tel" enterkeyhint="done" autocomplete="off">
+            </label>
+            <p class="hint">손님이 전화로 문의할 때 쓰는 가게 번호예요. 비워두셔도 됩니다.</p>
           </div>
 
           <!-- Q2 -->
@@ -908,6 +920,8 @@ select{
       category: val('category'),
       dong: val('dong'),
       dongOther: val('dongOther'),
+      address: val('address'),
+      phone: val('phone'),
       customers: getChecks('customers'),
       customersOther: val('customersOther'),
       times: getChecks('times'),
@@ -939,6 +953,8 @@ select{
     setVal('category', a.category);
     setVal('dong', a.dong);
     setVal('dongOther', a.dongOther);
+    setVal('address', a.address);
+    setVal('phone', a.phone);
     setChecks('customers', a.customers);
     setVal('customersOther', a.customersOther);
     setChecks('times', a.times);
@@ -981,7 +997,7 @@ select{
   function answeredFlags(){
     var a = collect();
     return {
-      1: !!(a.storeName || a.category || a.dong || a.dongOther),
+      1: !!(a.storeName || a.category || a.dong || a.dongOther || a.address || a.phone),
       2: !!(a.customers.length || a.customersOther || a.times.length || a.timesOther),
       3: !!a.praise,
       4: !!a.benefits.length,
@@ -1132,6 +1148,8 @@ select{
         ['상호명', a.storeName],
         ['업종', a.category],
         ['동네', dongText(a)],
+        ['주소', a.address],
+        ['전화번호', a.phone],
         ['단골 손님층', listText(a.customers, a.customersOther)],
         ['방문 시간대', listText(a.times, a.timesOther)],
         ['손님들의 한마디', a.praise]
@@ -1207,7 +1225,7 @@ select{
     var now = new Date();
     return {
       form: 'issuljido-store-survey',
-      version: '1.0',
+      version: '1.1',
       submittedAtLocal: localStamp(now),
       timezone: 'Asia/Seoul',
       channel: 'kakao-link',
@@ -1216,6 +1234,8 @@ select{
         category: a.category,
         dong: a.dong,
         dongOther: a.dongOther,
+        address: a.address,
+        phone: a.phone,
         customers: a.customers,
         customersOther: a.customersOther,
         times: a.times,
@@ -1283,6 +1303,8 @@ select{
     category: '카페',
     dong: '철산3동',
     dongOther: '',
+    address: '경기도 광명시 철산로 15, 1층',
+    phone: '02-2612-0000',
     customers: ['20~30대 직장인', '이웃 주민(연령 다양)'],
     customersOther: '',
     times: ['점심 (11시~14시)', '오후 (14시~17시)'],
@@ -1318,7 +1340,7 @@ select{
     $('#copyFallback').hidden = true;
     $('#gptCard').open = false;
     apply({
-      storeName:'', category:'', dong:'', dongOther:'', customers:[], customersOther:'',
+      storeName:'', category:'', dong:'', dongOther:'', address:'', phone:'', customers:[], customersOther:'',
       times:[], timesOther:'', praise:'', benefits:[], cross:'', crossNote:'',
       concerns:[], concernOther:'', mainMenu:'', help:'', helpTypes:[], gpt:''
     });
