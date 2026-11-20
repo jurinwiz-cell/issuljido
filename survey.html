@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F6B43">
+<title>있을지도 · 상점주 설문 (약 3분)</title>
+<meta name="description" content="광명 동네 가게 사장님을 위한 '있을지도' 소셜리빙랩 5~6주 단골 실증 참여 설문. 로그인·앱 설치 없이 카톡 링크로 바로 응답.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F6B43'/%3E%3Cpath d='M16 26s8-6.4 8-12.8A8 8 0 0 0 8 13.2C8 19.6 16 26 16 26Z' fill='%23fff'/%3E%3Ccircle cx='16' cy='13' r='3' fill='%230F6B43'/%3E%3C/svg%3E">
+<style>
+/* ============================================================ tokens */
+:root{
+  --bg:#F4F6F1;
+  --surface:#FFFFFF;
+  --surface-2:#FBFCF9;
+  --ink:#0F2318;
+  --ink-2:#33473C;
+  --muted:#5C6F65;
+  --line:#E1E7DC;
+  --line-2:#EDF1EA;
+  --brand:#0F6B43;
+  --brand-600:#0B5435;
+  --brand-700:#093F28;
+  --brand-50:#E9F3EC;
+  --brand-100:#D5E9DC;
+  --accent:#D97742;
+  --accent-50:#FBEDE3;
+  --sh1:0 1px 2px rgba(15,35,24,.05);
+  --sh2:0 8px 24px rgba(15,35,24,.08);
+  --r-lg:18px;
+  --r-md:14px;
+  --r-sm:10px;
+  --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.6;letter-spacing:-.01em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  word-break:keep-all;overflow-wrap:break-word;
+}
+h1,h2,h3,h4,p,figure,fieldset,legend{margin:0}
+fieldset{border:0;padding:0;min-width:0}
+legend{padding:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2.5px solid var(--brand);outline-offset:2px;border-radius:10px}
+[hidden]{display:none !important}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-64px;z-index:99;background:var(--ink);color:#fff;padding:12px 16px;border-radius:10px;font-size:14px;transition:top .2s}
+.skip:focus{top:12px}
+
+/* ============================================================ hero */
+.hero{
+  background:linear-gradient(158deg,#128055 0%,#0F6B43 52%,#0B5435 100%);
+  color:#fff;padding:18px 0 20px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-90px;width:250px;height:250px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%,rgba(255,255,255,.16),rgba(255,255,255,0) 68%);
+  pointer-events:none;
+}
+.hero-in{max-width:1080px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+.brandrow{display:flex;align-items:center;gap:11px}
+.mark{
+  width:38px;height:38px;border-radius:12px;flex:none;display:grid;place-items:center;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.brand-name .q{color:#F6C29B}
+.brand-sub{display:block;font-size:11px;color:rgba(255,255,255,.76);margin-top:3px;letter-spacing:0;white-space:nowrap}
+.hero-tag{
+  margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.02em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);
+  padding:6px 10px;border-radius:99px;color:#fff;
+}
+.hero h1{font-size:23px;line-height:1.36;font-weight:800;letter-spacing:-.035em;margin:16px 0 8px;max-width:19em}
+.hero .lede{font-size:14.5px;line-height:1.62;color:rgba(255,255,255,.88);max-width:34em}
+.hero .lede b{color:#fff;font-weight:700}
+.meta{list-style:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:14px 0 0}
+.meta li{
+  font-size:12.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:5px 11px 5px 9px;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.meta li::before{content:"";width:5px;height:5px;border-radius:50%;background:#8FE0B4}
+
+/* ============================================================ progress strip */
+.pbar{
+  position:sticky;top:0;z-index:25;background:rgba(255,255,255,.95);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.pbar-in{max-width:1080px;margin:0 auto;padding:9px 16px 10px}
+.pbar-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:7px}
+.pbar-step{font-size:13px;font-weight:800;color:var(--brand-700);letter-spacing:-.01em}
+.pbar-step .of{color:var(--muted);font-weight:600}
+.pbar-name{font-size:12.5px;color:var(--muted);font-weight:600}
+.pbar-count{font-size:12.5px;color:var(--muted);font-weight:700;white-space:nowrap}
+.track{height:6px;border-radius:99px;background:var(--line-2);overflow:hidden}
+.fill{
+  height:100%;width:8%;border-radius:99px;
+  background:linear-gradient(90deg,#14865A,#0F6B43);
+  transition:width .38s cubic-bezier(.4,0,.2,1);
+}
+/* ============================================================ layout */
+.layout{max-width:720px;margin:0 auto;padding:16px 16px 8px;display:block}
+.col{min-width:0}
+
+/* ============================================================ sidebar (desktop) */
+.side{display:none}
+.side-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--sh1);padding:16px;
+}
+.side-card + .side-card{margin-top:14px}
+.side-h{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.steps li{
+  display:flex;align-items:flex-start;gap:10px;padding:9px 10px;border-radius:11px;
+  font-size:14px;color:var(--muted);font-weight:600;line-height:1.4;
+}
+.steps li .n{
+  flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);
+  display:grid;place-items:center;font-size:11.5px;font-weight:800;color:var(--muted);
+  background:#fff;margin-top:1px;
+}
+.steps li .cnt{margin-left:auto;font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap;padding-left:6px}
+.steps li.cur{background:var(--brand-50);color:var(--brand-700)}
+.steps li.cur .n{background:var(--brand);border-color:var(--brand);color:#fff}
+.steps li.done{color:var(--ink-2)}
+.steps li.done .n{background:var(--brand-100);border-color:var(--brand-100);color:var(--brand-700)}
+.tips{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.tips li{display:flex;gap:8px;font-size:13px;line-height:1.5;color:var(--ink-2)}
+.tips li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:8px}
+
+/* ============================================================ cards / questions */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--sh1);padding:18px 16px 20px;
+}
+.card + .card{margin-top:14px}
+.card-h{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.card-h .kicker{
+  font-size:11.5px;font-weight:800;letter-spacing:.05em;color:var(--brand);
+  background:var(--brand-50);border-radius:99px;padding:5px 10px;flex:none;
+}
+.card-h h2{font-size:16px;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+.card-h h2:focus,.res-head h2:focus{outline:none}
+.card-sub{font-size:13.5px;color:var(--muted);margin:6px 0 0;line-height:1.55}
+
+.q{padding-top:20px;margin-top:20px;border-top:1px dashed var(--line)}
+.q:first-of-type{border-top:0;padding-top:14px;margin-top:10px}
+.q-head{display:flex;gap:9px;align-items:flex-start}
+.qno{
+  flex:none;min-width:26px;height:26px;border-radius:9px;background:var(--brand-50);
+  color:var(--brand-700);font-size:12.5px;font-weight:800;display:grid;place-items:center;
+  margin-top:2px;letter-spacing:0;
+}
+.q-head h3{font-size:16.5px;font-weight:800;line-height:1.45;letter-spacing:-.025em;color:var(--ink)}
+.q-tag{
+  font-size:11px;font-weight:700;color:var(--muted);background:var(--surface-2);
+  border:1px solid var(--line);border-radius:99px;padding:2px 7px;margin-left:6px;
+  vertical-align:2px;white-space:nowrap;letter-spacing:0;
+}
+.q-help{font-size:13.5px;line-height:1.55;color:var(--muted);margin:7px 0 2px 35px}
+
+/* fields */
+.field{display:block;margin-top:15px}
+.lbl{display:block;font-size:13px;font-weight:700;color:var(--ink-2);margin-bottom:6px}
+.lbl .opt-tag{font-weight:600;color:var(--muted);font-size:12px;margin-left:4px}
+input[type=text],input[type=tel],select,textarea{
+  display:block;width:100%;min-height:52px;padding:13px 14px;
+  border:1.5px solid var(--line);border-radius:12px;background:#fff;
+  font-size:16px;color:var(--ink);line-height:1.45;
+  transition:border-color .15s,box-shadow .15s,background .15s;
+  -webkit-appearance:none;appearance:none;
+}
+textarea{min-height:96px;resize:vertical;line-height:1.6;padding:12px 14px}
+input::placeholder,textarea::placeholder{color:#93A69B;font-weight:400}
+input[type=text]:focus,select:focus,textarea:focus{
+  border-color:var(--brand);box-shadow:0 0 0 3px rgba(15,107,67,.12);outline:none;
+}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1.2 1.4 7 7.2l5.8-5.8' fill='none' stroke='%235C6F65' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;
+  padding-right:42px;text-overflow:ellipsis;
+}
+.hint{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.5}
+.hint.warm{color:var(--accent);font-weight:600}
+
+/* chips (업종) */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:99px;
+  background:#fff;font-size:14px;font-weight:600;color:var(--ink-2);cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s;white-space:nowrap;
+}
+.chip:hover{border-color:#C3CFC6}
+.chip.is-on{background:var(--brand-50);border-color:var(--brand);color:var(--brand-700);font-weight:700}
+.chip:focus-visible{outline:2.5px solid var(--brand);outline-offset:2px}
+
+/* option rows */
+.opts{display:grid;gap:9px;margin-top:10px}
+.opts.two{grid-template-columns:1fr}
+.opt{
+  position:relative;display:flex;align-items:center;gap:11px;min-height:48px;
+  padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;
+  cursor:pointer;transition:background .15s,border-color .15s,box-shadow .1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.opt:hover{border-color:#C9D5CC}
+.opt > input{
+  position:absolute;inset:-1.5px;margin:0;opacity:0;
+  cursor:pointer;z-index:2;
+}
+.opt .box{
+  flex:none;width:22px;height:22px;border:2px solid #C3CFC6;border-radius:7px;
+  background:#fff;display:grid;place-items:center;transition:background .15s,border-color .15s;
+}
+.opt .box::after{
+  content:"";width:10px;height:5px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;
+  transform:rotate(-45deg) translate(1px,-1px);opacity:0;transition:opacity .12s;
+}
+.opt .box.radio{border-radius:50%}
+.opt .box.radio::after{width:10px;height:10px;border:0;border-radius:50%;background:#fff;transform:none}
+.opt .txt{font-size:15px;font-weight:600;color:var(--ink-2);line-height:1.4;letter-spacing:-.015em}
+.opt .txt small{display:block;font-size:12.5px;font-weight:500;color:var(--muted);margin-top:2px;letter-spacing:0}
+.opt.is-on{background:var(--brand-50);border-color:var(--brand)}
+.opt.is-on .box{background:var(--brand);border-color:var(--brand)}
+.opt.is-on .box::after{opacity:1}
+.opt.is-on .txt{color:var(--brand-700);font-weight:700}
+.opt.is-on .txt small{color:#3D6B54;font-weight:500}
+.opt:focus-within{outline:2.5px solid var(--brand);outline-offset:2px}
+
+/* ============================================================ gpt helper */
+.gpt{
+  margin-top:16px;border:1.5px solid var(--brand-100);border-radius:var(--r-lg);
+  background:linear-gradient(180deg,#F7FBF8,#FFFFFF);overflow:hidden;
+}
+.gpt summary{
+  display:flex;align-items:center;gap:11px;padding:14px 15px;cursor:pointer;
+  list-style:none;min-height:60px;
+}
+.gpt summary::-webkit-details-marker{display:none}
+.gpt summary::marker{content:""}
+.gpt-ic{
+  flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  background:#FEE500;color:#3C1E1E;font-weight:900;font-size:14px;letter-spacing:-.02em;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.gpt-t{min-width:0;flex:1}
+.gpt-t strong{display:block;font-size:14.5px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.35}
+.gpt-t em{display:block;font-style:normal;font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+.gpt-t .em-open{display:none}
+.gpt[open] .em-closed{display:none}
+.gpt[open] .em-open{display:block}
+.chev{flex:none;font-size:12px;color:var(--brand);transition:transform .2s;font-weight:700}
+.gpt[open] .chev{transform:rotate(180deg)}
+.gpt-body{padding:0 15px 16px;border-top:1px dashed var(--brand-100);padding-top:14px}
+.gpt-body p{font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+.gpt-how{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px;counter-reset:g}
+.gpt-how li{
+  position:relative;padding-left:26px;font-size:13px;line-height:1.5;color:var(--ink-2);
+  counter-increment:g;
+}
+.gpt-how li::before{
+  content:counter(g);position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;
+  background:var(--brand-50);color:var(--brand-700);font-size:10.5px;font-weight:800;
+  display:grid;place-items:center;margin-top:2px;
+}
+.promptbox{
+  margin-top:12px;background:#fff;border:1.5px dashed var(--brand-100);border-radius:12px;
+  padding:12px 13px;font-size:13px;line-height:1.62;color:var(--ink-2);
+  white-space:pre-wrap;word-break:keep-all;letter-spacing:-.01em;
+  font-family:var(--font);
+}
+.btn-copy{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  min-height:46px;padding:0 16px;margin-top:10px;border-radius:12px;
+  background:var(--brand);color:#fff;font-size:14px;font-weight:800;
+  box-shadow:0 4px 12px rgba(15,107,67,.2);width:100%;
+}
+.btn-copy:active{transform:translateY(1px)}
+
+/* ============================================================ buttons / nav */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:52px;padding:0 20px;border-radius:14px;font-size:16px;font-weight:800;
+  border:1.5px solid transparent;letter-spacing:-.02em;
+  transition:background .15s,border-color .15s,transform .06s,box-shadow .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(15,107,67,.24)}
+.btn.primary:hover{background:var(--brand-600)}
+.btn.ghost{background:#fff;border-color:var(--line);color:var(--ink-2)}
+.btn.ghost:hover{border-color:#C3CFC6;background:var(--surface-2)}
+.btn.quiet{background:transparent;border-color:transparent;color:var(--muted);box-shadow:none}
+.btn.quiet:hover{background:var(--surface-2);color:var(--ink-2)}
+.btn.tiny{min-height:44px;padding:0 14px;font-size:13.5px;border-radius:12px}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.5;pointer-events:none}
+.nav{
+  position:sticky;bottom:0;z-index:15;display:flex;gap:10px;
+  margin-top:16px;padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));
+  background:var(--bg);border-top:1px solid var(--line-2);
+  box-shadow:0 -10px 24px rgba(15,35,24,.07);
+}
+.nav .btn{flex:1}
+.nav .btn.prev{flex:0 0 auto;min-width:96px}
+.nav .btn.next{flex:1}
+.step-foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;margin-top:14px}
+.step-foot .note{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--brand-100);display:inline-block}
+
+/* ============================================================ result */
+.result{margin-top:4px}
+.res-head{text-align:center;padding:8px 4px 4px}
+.ok-badge{
+  width:52px;height:52px;margin:0 auto 10px;border-radius:50%;
+  background:var(--brand);color:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 20px rgba(15,107,67,.26);
+}
+.res-head h2{font-size:21px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.res-head p{font-size:14px;color:var(--muted);margin-top:7px;line-height:1.6;max-width:30em;margin-left:auto;margin-right:auto}
+
+.sumcard{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--sh2);overflow:hidden;margin-top:16px;
+}
+.sum-head{background:linear-gradient(158deg,#128055,#0F6B43 60%,#0B5435);color:#fff;padding:15px 18px 16px}
+.sum-head .st{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.82)}
+.sum-head h3{font-size:18px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.sum-head .sm{font-size:12px;color:rgba(255,255,255,.78);margin-top:5px}
+.sum-body{padding:2px 18px 14px}
+.sum-group{padding-top:15px}
+.sum-group > h4{
+  font-size:11.5px;font-weight:800;color:var(--brand);letter-spacing:.05em;
+  padding-bottom:7px;border-bottom:1px solid var(--line-2);margin-bottom:2px;
+}
+.rows{display:grid}
+.row{display:grid;grid-template-columns:1fr;gap:1px;padding:10px 0;border-bottom:1px dashed var(--line-2)}
+.row:last-child{border-bottom:0}
+.row dt{font-size:12px;font-weight:700;color:var(--muted);line-height:1.5;letter-spacing:0}
+.row dd{margin:0;font-size:15px;font-weight:700;color:var(--ink);line-height:1.55;word-break:break-word;letter-spacing:-.015em}
+.row dd.empty{color:#93A69B;font-weight:600}
+.row dd.long{white-space:pre-wrap;font-weight:600;font-size:13.5px}
+.sum-foot{padding:12px 18px 16px;background:var(--surface-2);border-top:1px solid var(--line-2);font-size:12px;color:var(--muted);display:flex;gap:7px;align-items:flex-start;line-height:1.5}
+.actions{display:grid;gap:9px;margin-top:16px}
+.actions .btn{width:100%}
+.demo-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;padding-top:6px}
+.demo-row #editAgain{grid-column:1 / -1}
+
+/* copy fallback (어디서든 뜨는 하단 패널) */
+.fallback{
+  position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:78;
+  width:min(560px,100%);max-height:82vh;overflow:auto;
+  background:var(--accent-50);border:1.5px solid #E8C6AE;border-bottom:0;
+  border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -12px 40px rgba(8,22,15,.26);
+}
+.fallback h4{font-size:14.5px;font-weight:800;color:#8C3A16}
+.fallback p{font-size:13px;color:#8C3A16;margin-top:5px;line-height:1.55}
+.fallback textarea{
+  margin-top:10px;background:#fff;border-color:#E8C6AE;min-height:160px;font-size:13px;
+  font-weight:500;line-height:1.65;
+}
+.fallback .btn{margin-top:9px;width:100%}
+
+/* ============================================================ toast */
+.toast{
+  position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));
+  transform:translate(-50%,10px);z-index:80;
+  background:#0F2318;color:#fff;font-size:14px;font-weight:700;line-height:1.4;
+  padding:12px 18px;border-radius:12px;box-shadow:0 12px 30px rgba(8,22,15,.3);
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+  max-width:calc(100vw - 32px);text-align:center;letter-spacing:-.01em;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ============================================================ footer */
+.foot{max-width:720px;margin:0 auto;padding:8px 16px 34px;text-align:center}
+.foot p{font-size:12px;color:var(--muted);line-height:1.7}
+.foot .sep{margin:0 6px;color:var(--line)}
+.foot a{font-weight:700}
+
+/* ============================================================ desktop */
+@media (min-width:560px){
+  .opts.two{grid-template-columns:1fr 1fr}
+  .card{padding:22px 22px 24px}
+  .hero{padding:24px 0 28px}
+  .hero h1{font-size:27px}
+  .res-head h2{font-size:23px}
+  .row{grid-template-columns:104px minmax(0,1fr);gap:12px;align-items:baseline;padding:9px 0}
+  .row dd{font-size:14.5px}
+  .brand-sub{font-size:11.5px}
+}
+@media (min-width:1000px){
+  .layout{
+    max-width:1080px;display:grid;grid-template-columns:300px minmax(0,1fr);
+    gap:26px;align-items:start;padding:22px 20px 8px;
+  }
+  .side{display:block;position:sticky;top:64px}
+  .hero-in{padding:0 20px}
+  .hero h1{font-size:29px;max-width:22em}
+  .hero .lede{font-size:15px}
+  .pbar-in{padding:10px 20px 11px}
+  .nav{position:static;background:none;justify-content:flex-end;padding:18px 0 0;margin-top:18px}
+  .nav .btn{flex:0 0 auto;min-width:150px;padding:0 26px}
+  .nav .btn.next{flex:0 0 auto;min-width:170px}
+  .row{grid-template-columns:112px minmax(0,1fr)}
+  .row dd{font-size:14.5px}
+  .foot{max-width:1080px;padding-left:20px;padding-right:20px}
+  .toast{bottom:40px}
+  .result .sumcard{margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로 가기</a>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="brandrow">
+      <span class="mark" aria-hidden="true">
+        <svg width="21" height="21" viewBox="0 0 32 32" fill="none"><path d="M16 27s8.5-6.8 8.5-13.4A8.5 8.5 0 0 0 7.5 13.6C7.5 20.2 16 27 16 27Z" fill="#fff"/><circle cx="16" cy="13.4" r="3.1" fill="#128055"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">있을지도 <span class="q">?</span></span>
+        <span class="brand-sub">광명 동네 가게 · 단골 리빙랩</span>
+      </span>
+      <span class="hero-tag">사장님 설문</span>
+    </div>
+    <h1>가게 이야기, 3분만 들려주세요</h1>
+    <p class="lede">‘있을지도’는 광명시 동네 가게와 단골 손님을 잇는 <b>5~6주 실증 사업</b>이에요. 사장님께 맞는 혜택과 홍보 방법을 함께 정하려고 짧게 여쭤봅니다.</p>
+    <ul class="meta">
+      <li>로그인·앱 설치 없이</li>
+      <li>8문항 · 약 3분</li>
+      <li>모르는 건 비워두세요</li>
+    </ul>
+  </div>
+</header>
+
+<div class="pbar">
+  <div class="pbar-in">
+    <div class="pbar-top">
+      <span class="pbar-step"><span id="pbStep">1</span><span class="of"> / 3단계</span> <span class="pbar-name" id="pbName">· 가게 기본 정보</span></span>
+      <span class="pbar-count" id="pbCount">응답 0 / 8</span>
+    </div>
+    <div class="track" role="progressbar" aria-label="설문 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="8" id="pbTrack">
+      <div class="fill" id="pbFill" style="width:8%"></div>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="layout">
+  <aside class="side" aria-label="설문 안내">
+    <div class="side-card">
+      <div class="side-h">진행 상황</div>
+      <ol class="steps" id="steps">
+        <li class="cur" data-s="1"><span class="n">1</span><span>가게 기본 정보</span><span class="cnt" data-cnt="1">0/3</span></li>
+        <li data-s="2"><span class="n">2</span><span>실증 참여 의향</span><span class="cnt" data-cnt="2">0/3</span></li>
+        <li data-s="3"><span class="n">3</span><span>홍보 · 카톡 도우미</span><span class="cnt" data-cnt="3">0/2</span></li>
+      </ol>
+    </div>
+    <div class="side-card">
+      <div class="side-h">알아두세요</div>
+      <ul class="tips">
+        <li>답은 운영팀 확인용으로만 쓰고, 가게 정보를 밖에 공개하지 않아요.</li>
+        <li>모르는 문항은 비워두셔도 괜찮아요. 나중에 함께 정할 수 있어요.</li>
+        <li>작성 중인 내용은 이 기기 브라우저에만 잠깐 저장돼요.</li>
+        <li>5~6주 실증이라 혜택은 부담 없는 선에서 정해요.</li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="col">
+    <form id="survey" novalidate autocomplete="off">
+
+      <!-- ============================================ STEP 1 -->
+      <section class="step on" data-step="1" aria-labelledby="s1h">
+        <div class="card">
+          <div class="card-h"><span class="kicker">1단계</span><h2 id="s1h">가게 기본 정보</h2></div>
+          <p class="card-sub">사장님 가게를 조금만 알려 주세요. 어렵게 물어보지 않을게요.</p>
+
+          <!-- Q1 -->
+          <div class="q" id="q1">
+            <div class="q-head">
+              <span class="qno">1</span>
+              <h3>가게 이름과 업종, 동네를 알려 주세요<span class="q-tag">필수 아님</span></h3>
+            </div>
+            <p class="q-help">‘동네 가게’로 표시될 때 쓰는 정보예요. 모르는 항목은 넘어가셔도 돼요.</p>
+
+            <label class="field">
+              <span class="lbl">상호명</span>
+              <input type="text" id="storeName" name="storeName" placeholder="예: 카페 온도" maxlength="40" enterkeyhint="next">
+            </label>
+
+            <label class="field">
+              <span class="lbl">업종 <span class="opt-tag">직접 써도 돼요</span></span>
+              <input type="text" id="category" name="category" placeholder="예: 카페, 음식점, 미용실, 공방" maxlength="30" enterkeyhint="next">
+            </label>
+            <div class="chips" id="catChips" role="group" aria-label="업종 빠른 선택">
+              <button type="button" class="chip" data-cat="카페">카페</button>
+              <button type="button" class="chip" data-cat="음식점">음식점</button>
+              <button type="button" class="chip" data-cat="베이커리·디저트">베이커리·디저트</button>
+              <button type="button" class="chip" data-cat="미용실·이발소">미용실·이발소</button>
+              <button type="button" class="chip" data-cat="네일·피부">네일·피부</button>
+              <button type="button" class="chip" data-cat="공방·공예">공방·공예</button>
+              <button type="button" class="chip" data-cat="꽃집">꽃집</button>
+              <button type="button" class="chip" data-cat="편의점·마트">편의점·마트</button>
+              <button type="button" class="chip" data-cat="세탁소">세탁소</button>
+              <button type="button" class="chip" data-cat="약국·의원">약국·의원</button>
+              <button type="button" class="chip" data-cat="학원·교습소">학원·교습소</button>
+              <button type="button" class="chip" data-cat="반려동물">반려동물</button>
+            </div>
+            <p class="hint">위 버튼을 누르면 자동으로 채워져요.</p>
+
+            <label class="field">
+              <span class="lbl">가게가 있는 동네</span>
+              <select id="dong" name="dong">
+                <option value="">선택해 주세요</option>
+                <option value="광명1동">광명1동</option>
+                <option value="광명2동">광명2동</option>
+                <option value="광명3동">광명3동</option>
+                <option value="광명4동">광명4동</option>
+                <option value="광명5동">광명5동</option>
+                <option value="광명6동">광명6동</option>
+                <option value="광명7동">광명7동</option>
+                <option value="철산1동">철산1동</option>
+                <option value="철산2동">철산2동</option>
+                <option value="철산3동">철산3동</option>
+                <option value="철산4동">철산4동</option>
+                <option value="하안1동">하안1동</option>
+                <option value="하안2동">하안2동</option>
+                <option value="하안3동">하안3동</option>
+                <option value="하안4동">하안4동</option>
+                <option value="소하1동">소하1동</option>
+                <option value="소하2동">소하2동</option>
+                <option value="일직동">일직동</option>
+                <option value="학온동">학온동</option>
+                <option value="기타">기타 (직접 입력)</option>
+              </select>
+            </label>
+            <label class="field" id="dongOtherWrap" hidden>
+              <span class="lbl">동네 직접 입력</span>
+              <input type="text" id="dongOther" name="dongOther" placeholder="예: 광명역 인근" maxlength="30">
+            </label>
+          </div>
+
+          <!-- Q2 -->
+          <div class="q" id="q2">
+            <div class="q-head">
+              <span class="qno">2</span>
+              <h3>주로 오시는 단골 손님과 시간대는요?</h3>
+            </div>
+            <p class="q-help">여러 개 골라도 좋아요. 잘 모르면 ‘잘 모르겠어요’를 눌러 주세요.</p>
+
+            <fieldset>
+              <legend class="lbl" style="margin-top:16px">어떤 손님이 자주 오시나요?</legend>
+              <div class="opts two" role="group">
+                <label class="opt"><input type="checkbox" name="customers" value="20~30대 직장인"><span class="box" aria-hidden="true"></span><span class="txt">20~30대 직장인</span></label>
+                <label class="opt"><input type="checkbox" name="customers" value="30~50대 주부·학부모"><span class="box" aria-hidden="true"></span><span class="txt">30~50대 주부·학부모</span></label>
+                <label class="opt"><input type="checkbox" name="customers" value="50대 이상 어르신·오래된 단골"><span class="box" aria-hidden="true"></span><span class="txt">50대 이상 어르신·오래된 단골</span></label>
+                <label class="opt"><input type="checkbox" name="customers" value="학생·청소년"><span class="box" aria-hidden="true"></span><span class="txt">학생·청소년</span></label>
+                <label class="opt"><input type="checkbox" name="customers" value="이웃 주민(연령 다양)"><span class="box" aria-hidden="true"></span><span class="txt">이웃 주민 (연령 다양)</span></label>
+                <label class="opt"><input type="checkbox" name="customers" value="다른 동네·외부 방문객"><span class="box" aria-hidden="true"></span><span class="txt">다른 동네·외부 방문객</span></label>
+                <label class="opt"><input type="checkbox" name="customers" value="잘 모르겠어요" data-exclusive><span class="box" aria-hidden="true"></span><span class="txt">잘 모르겠어요</span></label>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span class="lbl">직접 적고 싶은 손님층 <span class="opt-tag">선택</span></span>
+              <input type="text" id="customersOther" name="customersOther" placeholder="예: 근처 학원 학부모, 아파트 단지 주민" maxlength="60">
+            </label>
+
+            <fieldset>
+              <legend class="lbl" style="margin-top:24px">주로 언제 오시나요?</legend>
+              <div class="opts two" role="group">
+                <label class="opt"><input type="checkbox" name="times" value="아침 (개점~11시)"><span class="box" aria-hidden="true"></span><span class="txt">아침 <small>개점 ~ 11시</small></span></label>
+                <label class="opt"><input type="checkbox" name="times" value="점심 (11시~14시)"><span class="box" aria-hidden="true"></span><span class="txt">점심 <small>11시 ~ 14시</small></span></label>
+                <label class="opt"><input type="checkbox" name="times" value="오후 (14시~17시)"><span class="box" aria-hidden="true"></span><span class="txt">오후 <small>14시 ~ 17시</small></span></label>
+                <label class="opt"><input type="checkbox" name="times" value="저녁 (17시~20시)"><span class="box" aria-hidden="true"></span><span class="txt">저녁 <small>17시 ~ 20시</small></span></label>
+                <label class="opt"><input type="checkbox" name="times" value="늦은 저녁 (20시 이후)"><span class="box" aria-hidden="true"></span><span class="txt">늦은 저녁 <small>20시 이후</small></span></label>
+                <label class="opt"><input type="checkbox" name="times" value="잘 모르겠어요" data-exclusive><span class="box" aria-hidden="true"></span><span class="txt">잘 모르겠어요</span></label>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span class="lbl">직접 적고 싶은 시간대 <span class="opt-tag">선택</span></span>
+              <input type="text" id="timesOther" name="timesOther" placeholder="예: 주말 오전, 비 오는 날" maxlength="60">
+            </label>
+          </div>
+
+          <!-- Q3 -->
+          <div class="q" id="q3">
+            <div class="q-head">
+              <span class="qno">3</span>
+              <h3>손님들이 자주 칭찬하거나 남기는 말이 있나요?<span class="q-tag">선택</span></h3>
+            </div>
+            <p class="q-help">한두 줄이면 충분해요. 소개글을 쓸 때 큰 힘이 됩니다.</p>
+            <label class="field">
+              <span class="sr">손님들의 한마디</span>
+              <textarea id="praise" name="praise" maxlength="300" placeholder="예: “여기 원두 향이 좋아서 자주 와요.” / “사장님이 친절해서 편해요.” / “주차가 편해서 좋아요.”"></textarea>
+            </label>
+            <p class="hint">생각나는 대로 편하게 적어 주세요. 없으면 비워두셔도 돼요.</p>
+          </div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="btn primary next" data-go="2">다음 <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="step-foot">
+          <span class="note"><span class="dot"></span>작성 중인 내용은 이 기기에만 자동 저장돼요</span>
+        </div>
+      </section>
+
+      <!-- ============================================ STEP 2 -->
+      <section class="step" data-step="2" aria-labelledby="s2h">
+        <div class="card">
+          <div class="card-h"><span class="kicker">2단계</span><h2 id="s2h">5~6주 실증, 함께해 보실래요?</h2></div>
+          <p class="card-sub">동안 단골에게 줄 작은 혜택과, 걱정되는 점을 여쭤봐요. 부담 갖지 않으셔도 됩니다.</p>
+
+          <!-- Q4 -->
+          <div class="q" id="q4">
+            <div class="q-head">
+              <span class="qno">4</span>
+              <h3>단골에게 줄 수 있는 부담 없는 혜택은요?</h3>
+            </div>
+            <p class="q-help">여러 개 골라도 좋아요. ‘아직 미정’을 골라도 운영팀이 같이 정해 드려요.</p>
+            <fieldset>
+              <legend class="sr">단골 혜택</legend>
+              <div class="opts" role="group">
+                <label class="opt"><input type="checkbox" name="benefits" value="첫 방문·재방문 소액 서비스(음료·토핑·샘플 등)"><span class="box" aria-hidden="true"></span><span class="txt">첫 방문·재방문 소액 서비스<small>음료 한 잔, 토핑, 샘플 등 작은 것</small></span></label>
+                <label class="opt"><input type="checkbox" name="benefits" value="도장·스탬프"><span class="box" aria-hidden="true"></span><span class="txt">도장·스탬프<small>종이 스탬프 카드도 괜찮아요</small></span></label>
+                <label class="opt"><input type="checkbox" name="benefits" value="단골 전용 정보·예약 우선"><span class="box" aria-hidden="true"></span><span class="txt">단골 전용 정보·예약 우선<small>새 메뉴 소식, 자리·시간 우선 예약</small></span></label>
+                <label class="opt"><input type="checkbox" name="benefits" value="아직 미정(운영팀과 상의)" data-exclusive><span class="box" aria-hidden="true"></span><span class="txt">아직 미정 <small>운영팀과 상의해서 정할게요</small></span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q5 -->
+          <div class="q" id="q5">
+            <div class="q-head">
+              <span class="qno">5</span>
+              <h3>단골에게 이웃 가게를 추천하거나, 가게에 작은 안내문(QR)을 두는 건 어떠세요?</h3>
+            </div>
+            <p class="q-help">‘있을지도’는 가게끼리 손님을 이어 주는 걸 해 보려고 해요.</p>
+            <fieldset>
+              <legend class="sr">교차 추천·안내문 동의</legend>
+              <div class="opts" role="group">
+                <label class="opt"><input type="radio" name="cross" value="예"><span class="box radio" aria-hidden="true"></span><span class="txt">좋아요<small>추천도, 안내문도 괜찮아요</small></span></label>
+                <label class="opt"><input type="radio" name="cross" value="조건부 가능"><span class="box radio" aria-hidden="true"></span><span class="txt">조건이 맞으면 가능해요<small>방법이나 자리만 조정하면 괜찮아요</small></span></label>
+                <label class="opt"><input type="radio" name="cross" value="어려움"><span class="box radio" aria-hidden="true"></span><span class="txt">지금은 어려워요<small>이번엔 다른 방법을 찾아볼게요</small></span></label>
+              </div>
+            </fieldset>
+            <label class="field" id="crossNoteWrap" hidden>
+              <span class="lbl">어떤 조건이면 괜찮으신가요? <span class="opt-tag">선택</span></span>
+              <input type="text" id="crossNote" name="crossNote" placeholder="예: 손님에게 먼저 물어본 뒤에만, 안내문은 계산대 옆에 작게" maxlength="120">
+            </label>
+          </div>
+
+          <!-- Q6 -->
+          <div class="q" id="q6">
+            <div class="q-head">
+              <span class="qno">6</span>
+              <h3>운영하면서 가장 걱정되거나 부담되는 점은요?</h3>
+            </div>
+            <p class="q-help">솔직하게 골라 주시면 그 부분을 줄이는 방식으로 준비할게요.</p>
+            <fieldset>
+              <legend class="sr">걱정되는 점</legend>
+              <div class="opts" role="group">
+                <label class="opt"><input type="checkbox" name="concerns" value="바쁜 시간 응대"><span class="box" aria-hidden="true"></span><span class="txt">바쁜 시간에 응대가 어려워요</span></label>
+                <label class="opt"><input type="checkbox" name="concerns" value="디지털 사용 어려움"><span class="box" aria-hidden="true"></span><span class="txt">앱·QR 같은 디지털이 어려워요</span></label>
+                <label class="opt"><input type="checkbox" name="concerns" value="비용 부담"><span class="box" aria-hidden="true"></span><span class="txt">비용이 들까 걱정돼요</span></label>
+                <label class="opt"><input type="checkbox" name="concerns" value="기타"><span class="box" aria-hidden="true"></span><span class="txt">그 밖의 걱정<small>아래에 적어 주세요</small></span></label>
+                <label class="opt"><input type="checkbox" name="concerns" value="특별히 없음" data-exclusive><span class="box" aria-hidden="true"></span><span class="txt">특별히 없어요</span></label>
+              </div>
+            </fieldset>
+            <label class="field" id="concernOtherWrap" hidden>
+              <span class="lbl">그 밖의 걱정</span>
+              <input type="text" id="concernOther" name="concernOther" placeholder="예: 손님이 몰릴 때 자리가 부족해요" maxlength="120">
+            </label>
+          </div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="btn ghost prev" data-go="1">← 이전</button>
+          <button type="button" class="btn primary next" data-go="3">다음 <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <!-- ============================================ STEP 3 -->
+      <section class="step" data-step="3" aria-labelledby="s3h">
+        <div class="card">
+          <div class="card-h"><span class="kicker">3단계</span><h2 id="s3h">홍보 · 카톡 도우미</h2></div>
+          <p class="card-sub">마지막이에요. 알리고 싶은 것 하나와, 도움이 필요한지만 여쭤볼게요.</p>
+
+          <!-- Q7 -->
+          <div class="q" id="q7">
+            <div class="q-head">
+              <span class="qno">7</span>
+              <h3>지금 손님에게 가장 알리고 싶은 메뉴·서비스 하나는요?</h3>
+            </div>
+            <p class="q-help">한 가지만 골라 주세요. 지도와 소개 카드에 먼저 보여 드릴게요.</p>
+            <label class="field">
+              <span class="sr">대표 메뉴·서비스</span>
+              <input type="text" id="mainMenu" name="mainMenu" placeholder="예: 직접 내린 콜드브루 / 갓 구운 크림빵 / 30분 발 관리" maxlength="60" enterkeyhint="next">
+            </label>
+            <p class="hint warm">모르면 비워두세요. ‘있을지도’에서 같이 정해 드릴게요.</p>
+          </div>
+
+          <!-- Q8 -->
+          <div class="q" id="q8">
+            <div class="q-head">
+              <span class="qno">8</span>
+              <h3>‘있을지도’ 지도·SNS에 올라갈 가게 소개, 도와드릴까요?</h3>
+            </div>
+            <p class="q-help">소개 문구 다듬기나 사진 보정을 운영팀이 도와드려요. 무료예요.</p>
+            <fieldset>
+              <legend class="sr">소개글·사진 보정 희망</legend>
+              <div class="opts two" role="group">
+                <label class="opt"><input type="radio" name="help" value="원함"><span class="box radio" aria-hidden="true"></span><span class="txt">네, 도움 받고 싶어요<small>문구·사진 정리를 도와드려요</small></span></label>
+                <label class="opt"><input type="radio" name="help" value="필요 없음"><span class="box radio" aria-hidden="true"></span><span class="txt">지금은 괜찮아요<small>직접 준비할게요</small></span></label>
+              </div>
+            </fieldset>
+            <div id="helpTypesWrap" hidden>
+              <p class="lbl" style="margin-top:14px">어떤 도움이 필요하세요? <span class="opt-tag">여러 개 가능</span></p>
+              <div class="chips" role="group" aria-label="도움 종류">
+                <label class="opt" style="min-height:44px;padding:8px 14px;border-radius:99px"><input type="checkbox" name="helpTypes" value="소개 문구"><span class="box" aria-hidden="true"></span><span class="txt">소개 문구 다듬기</span></label>
+                <label class="opt" style="min-height:44px;padding:8px 14px;border-radius:99px"><input type="checkbox" name="helpTypes" value="사진 보정"><span class="box" aria-hidden="true"></span><span class="txt">사진 보정</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- BONUS : ChatGPT for Kakao -->
+          <details class="gpt" id="gptCard">
+            <summary>
+              <span class="gpt-ic" aria-hidden="true">K</span>
+              <span class="gpt-t">
+                <strong>카톡 ChatGPT로 2분 만에 가게 소개글 만들기</strong>
+                <em class="em-closed">선택 사항 · 눌러서 펼치기</em><em class="em-open">펼쳐졌어요 · 눌러서 접기</em>
+              </span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="gpt-body">
+              <p>카카오톡에서 <b>ChatGPT for Kakao</b>를 열고, 아래 문장을 그대로 붙여넣으면 질문을 하나씩 해요. 편하게 답하기만 하면 가게 소개글이 만들어집니다.</p>
+              <ol class="gpt-how">
+                <li>카카오톡에서 <b>ChatGPT for Kakao</b> 대화창을 열어요.</li>
+                <li>아래 <b>프롬프트 복사</b>를 누르고 그대로 붙여넣어요.</li>
+                <li>ChatGPT가 묻는 것에 하나씩 편하게 답해요. (모르면 “모름”이라고 해도 돼요)</li>
+                <li>나온 소개글을 아래 칸에 붙여넣으면 설문 요약에 함께 담겨요.</li>
+              </ol>
+              <div class="promptbox" id="gptPrompt">내 가게 단골 소개 카드를 만들려고 해. 가게명·업종·대표메뉴·단골들이 좋아하는 이유를 내가 편하게 말하면, ① 한 줄 요약 ② 단골 혜택 아이디어 2가지 ③ '있을지도' 동네 소개글(200자)로 정리해 줘. 모르는 건 '모름'이라고 할게. 한 번에 하나씩만 물어봐 줘.</div>
+              <button type="button" class="btn-copy" id="copyPrompt">📋 프롬프트 복사</button>
+              <label class="field">
+                <span class="lbl">ChatGPT가 만들어 준 소개글 붙여넣기 <span class="opt-tag">선택</span></span>
+                <textarea id="gptResult" name="gptResult" maxlength="2000" placeholder="ChatGPT 결과를 여기에 붙여넣어 주세요. 비워두셔도 괜찮아요."></textarea>
+              </label>
+              <p class="hint">붙여넣은 글은 이 설문 요약과 함께 운영팀에 전달돼요.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="btn ghost prev" data-go="2">← 이전</button>
+          <button type="button" class="btn primary" id="submitBtn">설문 완료 및 요약 보기</button>
+        </div>
+        <div class="step-foot">
+          <span class="note"><span class="dot"></span>비워둔 문항이 있어도 괜찮아요. 그대로 완료할 수 있어요.</span>
+        </div>
+      </section>
+    </form>
+
+    <!-- ============================================ RESULT -->
+    <section class="result" id="result" hidden aria-labelledby="resH">
+      <div class="res-head">
+        <div class="ok-badge" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.6 9.6 17 19 7.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 id="resH">설문이 정리되었어요</h2>
+        <p>아래 요약을 <b>카톡으로 운영팀에 보내 주세요</b>. 확인하고 사장님께 맞는 방식으로 다시 연락드릴게요.</p>
+      </div>
+
+      <div class="sumcard" id="summaryCard">
+        <div class="sum-head">
+          <div class="st">있을지도 · 상점 설문 응답</div>
+          <h3 id="sumStore">우리 가게</h3>
+          <div class="sm" id="sumMeta">—</div>
+        </div>
+        <div class="sum-body" id="sumBody"></div>
+        <div class="sum-foot">
+          <span aria-hidden="true">🔒</span>
+          <span>이 응답은 ‘있을지도’ 운영팀 확인용으로만 쓰여요. 가게 정보를 밖에 공개하지 않습니다.</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" id="copySummary">📋 카톡 전송용 요약 복사</button>
+        <button type="button" class="btn ghost" id="saveJson">💾 응답 파일(JSON) 저장</button>
+        <div class="demo-row">
+          <button type="button" class="btn ghost tiny" id="editAgain">← 설문 수정하기</button>
+          <button type="button" class="btn ghost tiny" id="fillSample">✨ 예시 채우기</button>
+          <button type="button" class="btn ghost tiny" id="resetAll">초기화</button>
+        </div>
+        <p class="hint" style="text-align:center">‘예시 채우기’는 시연·테스트용이에요. 어떻게 보이는지 바로 확인할 수 있어요.</p>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>있을지도 <span class="sep">·</span> 광명시 시민참여 소셜리빙랩 6팀(C-2) <span class="sep">·</span> 5~6주 단골 실증</p>
+  <p style="margin-top:4px">문의는 운영팀 카톡으로 주세요.</p>
+  <p style="margin-top:4px"><a href="index.html">동네 지도 보기 →</a></p>
+</footer>
+
+<div class="fallback" id="copyFallback" hidden role="dialog" aria-label="복사 도우미">
+  <h4>자동 복사가 안 됐어요</h4>
+  <p>아래 글을 길게 눌러 <b>전체 선택 → 복사</b>한 뒤, 카톡에 붙여넣으면 돼요.</p>
+  <textarea id="copyFallbackText" readonly spellcheck="false"></textarea>
+  <button type="button" class="btn ghost tiny" id="copyFallbackClose">닫기</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+
+  var KEY = 'issuljido.survey.v1';
+  var STEP_NAMES = {1:'가게 기본 정보', 2:'실증 참여 의향', 3:'홍보 · 카톡 도우미'};
+  var GPT_PROMPT = "내 가게 단골 소개 카드를 만들려고 해. 가게명·업종·대표메뉴·단골들이 좋아하는 이유를 내가 편하게 말하면, ① 한 줄 요약 ② 단골 혜택 아이디어 2가지 ③ '있을지도' 동네 소개글(200자)로 정리해 줘. 모르는 건 '모름'이라고 할게. 한 번에 하나씩만 물어봐 줘.";
+
+  function $(sel, root){ return (root || document).querySelector(sel); }
+  function $$(sel, root){ return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function pad2(n){ return (n < 10 ? '0' : '') + n; }
+  /* 로컬 시간 기준 (toISOString 사용하지 않음 — 기기 시간대 그대로) */
+  function localStamp(d){
+    d = d || new Date();
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()) +
+           ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+  function localFileStamp(d){
+    d = d || new Date();
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()) +
+           '-' + pad2(d.getHours()) + pad2(d.getMinutes());
+  }
+  function localPretty(d){
+    d = d || new Date();
+    return d.getFullYear() + '. ' + pad2(d.getMonth() + 1) + '. ' + pad2(d.getDate()) +
+           ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+
+  /* ---------- localStorage (샌드박스·사생활 모드에서도 죽지 않게) ---------- */
+  var store = {
+    get: function(){
+      try{
+        var raw = window.localStorage.getItem(KEY);
+        if(!raw) return null;
+        var o = JSON.parse(raw);
+        return (o && typeof o === 'object') ? o : null;
+      }catch(e){ return null; }
+    },
+    set: function(obj){
+      try{ window.localStorage.setItem(KEY, JSON.stringify(obj)); return true; }
+      catch(e){ return false; }
+    },
+    clear: function(){
+      try{ window.localStorage.removeItem(KEY); }catch(e){}
+    }
+  };
+
+  /* ---------- toast ---------- */
+  var toastEl = $('#toast'), toastTimer = null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('on');
+    if(toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('on'); }, 2600);
+  }
+
+  /* ---------- 읽기 도우미 ---------- */
+  function val(id){ var el = document.getElementById(id); return el ? String(el.value || '').trim() : ''; }
+  function getChecks(name){
+    return $$('input[name="' + name + '"]').filter(function(i){ return i.checked; })
+      .map(function(i){ return i.value; });
+  }
+  function radioVal(name){
+    var el = $('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+
+  function collect(){
+    return {
+      storeName: val('storeName'),
+      category: val('category'),
+      dong: val('dong'),
+      dongOther: val('dongOther'),
+      customers: getChecks('customers'),
+      customersOther: val('customersOther'),
+      times: getChecks('times'),
+      timesOther: val('timesOther'),
+      praise: val('praise'),
+      benefits: getChecks('benefits'),
+      cross: radioVal('cross'),
+      crossNote: val('crossNote'),
+      concerns: getChecks('concerns'),
+      concernOther: val('concernOther'),
+      mainMenu: val('mainMenu'),
+      help: radioVal('help'),
+      helpTypes: getChecks('helpTypes'),
+      gpt: val('gptResult')
+    };
+  }
+
+  function setVal(id, v){
+    var el = document.getElementById(id);
+    if(el) el.value = (v === undefined || v === null) ? '' : String(v);
+  }
+  function setChecks(name, arr){
+    arr = arr || [];
+    $$('input[name="' + name + '"]').forEach(function(i){ i.checked = arr.indexOf(i.value) > -1; });
+  }
+  function apply(a){
+    if(!a) return;
+    setVal('storeName', a.storeName);
+    setVal('category', a.category);
+    setVal('dong', a.dong);
+    setVal('dongOther', a.dongOther);
+    setChecks('customers', a.customers);
+    setVal('customersOther', a.customersOther);
+    setChecks('times', a.times);
+    setVal('timesOther', a.timesOther);
+    setVal('praise', a.praise);
+    setChecks('benefits', a.benefits);
+    setChecks('cross', a.cross ? [a.cross] : []);
+    setVal('crossNote', a.crossNote);
+    setChecks('concerns', a.concerns);
+    setVal('concernOther', a.concernOther);
+    setVal('mainMenu', a.mainMenu);
+    setChecks('help', a.help ? [a.help] : []);
+    setChecks('helpTypes', a.helpTypes);
+    setVal('gptResult', a.gpt);
+    refreshUI();
+  }
+
+  /* ---------- 옵션/조건부 화면 동기화 ---------- */
+  function syncOptionStyles(){
+    $$('.opt').forEach(function(lab){
+      var inp = lab.querySelector('input');
+      if(!inp) return;
+      lab.classList.toggle('is-on', inp.checked);
+    });
+    $$('.chip[data-cat]').forEach(function(c){
+      c.classList.toggle('is-on', val('category') === c.getAttribute('data-cat'));
+      c.setAttribute('aria-pressed', val('category') === c.getAttribute('data-cat') ? 'true' : 'false');
+    });
+  }
+
+  function updateConditionals(){
+    var show = function(id, on){ var el = document.getElementById(id); if(el) el.hidden = !on; };
+    show('dongOtherWrap', val('dong') === '기타');
+    show('crossNoteWrap', radioVal('cross') === '조건부 가능');
+    show('concernOtherWrap', getChecks('concerns').indexOf('기타') > -1);
+    show('helpTypesWrap', radioVal('help') === '원함');
+  }
+
+  /* ---------- 문항별 응답 여부 ---------- */
+  function answeredFlags(){
+    var a = collect();
+    return {
+      1: !!(a.storeName || a.category || a.dong || a.dongOther),
+      2: !!(a.customers.length || a.customersOther || a.times.length || a.timesOther),
+      3: !!a.praise,
+      4: !!a.benefits.length,
+      5: !!a.cross,
+      6: !!(a.concerns.length || a.concernOther),
+      7: !!a.mainMenu,
+      8: !!a.help
+    };
+  }
+
+  var STEP_Qs = {1:[1,2,3], 2:[4,5,6], 3:[7,8]};
+  var currentStep = 1;
+
+  function refreshUI(){
+    syncOptionStyles();
+    updateConditionals();
+    var f = answeredFlags();
+    var total = 0;
+    [1,2,3].forEach(function(s){
+      var n = STEP_Qs[s].filter(function(q){ return f[q]; }).length;
+      total += n;
+      var li = $('.steps li[data-s="' + s + '"]');
+      if(!li) return;
+      var cnt = li.querySelector('.cnt');
+      if(cnt) cnt.textContent = n + '/' + STEP_Qs[s].length;
+      li.classList.toggle('done', n === STEP_Qs[s].length);
+      li.classList.toggle('cur', s === currentStep);
+    });
+    var cntEl = $('#pbCount');
+    if(cntEl) cntEl.textContent = '응답 ' + total + ' / 8';
+    if(!$('#result').hidden) renderSummary();
+    return total;
+  }
+
+  function scrollToEl(el, off){
+    if(!el) return;
+    var top = el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0) - (off || 56);
+    if(top < 0) top = 0;
+    try{ window.scrollTo({ top: top, behavior: 'smooth' }); }catch(e){ window.scrollTo(0, top); }
+  }
+
+  function goStep(n){
+    n = Math.min(3, Math.max(1, n));
+    currentStep = n;
+    $$('.step').forEach(function(s){
+      var on = Number(s.getAttribute('data-step')) === n;
+      s.classList.toggle('on', on);
+      s.hidden = !on;
+    });
+    $('#pbStep').textContent = String(n);
+    $('#pbName').textContent = '· ' + STEP_NAMES[n];
+    var pct = Math.round(n / 3 * 100);
+    $('#pbFill').style.width = pct + '%';
+    var track = $('#pbTrack');
+    if(track) track.setAttribute('aria-valuenow', String(pct));
+    $$('.steps li').forEach(function(li){
+      li.classList.toggle('cur', Number(li.getAttribute('data-s')) === n);
+    });
+    if(n === 1){
+      try{ window.scrollTo({ top: 0, behavior: 'smooth' }); }catch(e){ window.scrollTo(0, 0); }
+    }else{
+      scrollToEl($('.step[data-step="' + n + '"] .card'), 56);
+    }
+    var h = $('.step[data-step="' + n + '"] .card-h h2');
+    if(h){ h.setAttribute('tabindex', '-1'); try{ h.focus({ preventScroll: true }); }catch(e){} }
+    refreshUI();
+    queueSave();
+  }
+
+  /* ---------- 초안 저장 ---------- */
+  var saveTimer = null;
+  function queueSave(){
+    if(saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){
+      var a = collect();
+      a._step = currentStep;
+      a._savedAt = localStamp();
+      store.set(a);
+    }, 220);
+  }
+
+  /* ---------- 복사 ---------- */
+  function legacyCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', 'readonly');
+    ta.style.position = 'fixed';
+    ta.style.top = '0';
+    ta.style.left = '0';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    var ok = false;
+    try{
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      ok = document.execCommand('copy');
+    }catch(e){ ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copyText(text, okMsg){
+    return new Promise(function(resolve){
+      var done = function(ok){
+        if(ok){ toast(okMsg || '복사했어요. 카톡에 붙여넣어 주세요.'); }
+        resolve(ok);
+      };
+      var fallback = function(){
+        var ok = legacyCopy(text);
+        if(!ok){
+          var fb = $('#copyFallback'), ta = $('#copyFallbackText');
+          if(fb && ta){
+            ta.value = text;
+            fb.hidden = false;
+            try{ ta.focus(); ta.select(); }catch(e){}
+            fb.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          }
+        }
+        done(ok);
+      };
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ fallback(); });
+        }else{ fallback(); }
+      }catch(e){ fallback(); }
+    });
+  }
+
+  /* ---------- 요약 만들기 ---------- */
+  function dongText(a){
+    if(a.dong === '기타') return a.dongOther || '기타(미기재)';
+    return a.dong;
+  }
+  function listText(arr, other){
+    var parts = (arr || []).filter(function(v){ return v !== '잘 모르겠어요' && v !== '특별히 없음'; });
+    if(other) parts.push(other);
+    if(!parts.length && (arr || []).indexOf('잘 모르겠어요') > -1) return '잘 모르겠어요';
+    if(!parts.length && (arr || []).indexOf('특별히 없음') > -1) return '특별히 없음';
+    return parts.join(', ');
+  }
+
+  function summaryGroups(a){
+    var helpText = a.help || '';
+    if(a.help === '원함' && a.helpTypes.length) helpText += ' (' + a.helpTypes.join(', ') + ')';
+    return [
+      { title:'가게 기본 정보', rows:[
+        ['상호명', a.storeName],
+        ['업종', a.category],
+        ['동네', dongText(a)],
+        ['단골 손님층', listText(a.customers, a.customersOther)],
+        ['방문 시간대', listText(a.times, a.timesOther)],
+        ['손님들의 한마디', a.praise]
+      ]},
+      { title:'리빙랩 실증 참여', rows:[
+        ['줄 수 있는 혜택', listText(a.benefits, '')],
+        ['이웃 가게 추천·안내문', a.cross + (a.crossNote ? ' (' + a.crossNote + ')' : '')],
+        ['걱정되는 점', listText(a.concerns, a.concernOther)]
+      ]},
+      { title:'홍보 · 도우미', rows:[
+        ['대표 메뉴·서비스', a.mainMenu],
+        ['소개글·사진 보정', helpText]
+      ]},
+      { title:'ChatGPT로 만든 소개글', onlyIf:!!a.gpt, rows:[['가게 소개글', a.gpt]] }
+    ];
+  }
+
+  function buildSummaryText(a, stamp){
+    var out = [];
+    out.push('🌿 있을지도 · 상점 설문 응답');
+    out.push(stamp);
+    out.push('');
+    summaryGroups(a).forEach(function(g){
+      if(g.onlyIf === false) return;
+      var rows = g.rows.filter(function(r){ return r[1]; });
+      if(!rows.length) return;
+      out.push('▸ ' + g.title);
+      rows.forEach(function(r){ out.push('· ' + r[0] + ': ' + r[1]); });
+      out.push('');
+    });
+    if(out.length <= 3) out.push('· (아직 적힌 내용이 없어요)');
+    out.push('— 보낸 곳: 있을지도 운영팀 (광명시 소셜리빙랩 6팀 C-2)');
+    return out.join('\n');
+  }
+
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+
+  function buildSummaryHTML(a){
+    var html = '';
+    summaryGroups(a).forEach(function(g){
+      if(g.onlyIf === false) return;
+      html += '<div class="sum-group"><h4>' + esc(g.title) + '</h4><dl class="rows">';
+      g.rows.forEach(function(r){
+        var v = r[1];
+        var cls = 'empty', content = '— 미응답';
+        if(v){ cls = (String(v).length > 40 ? 'long' : ''); content = esc(v); }
+        html += '<div class="row"><dt>' + esc(r[0]) + '</dt><dd class="' + cls + '">' + content.replace(/\n/g, '<br>') + '</dd></div>';
+      });
+      html += '</dl></div>';
+    });
+    return html;
+  }
+
+  function renderSummary(){
+    var a = collect();
+    var now = new Date();
+    $('#sumStore').textContent = a.storeName || '이름 없는 동네 가게';
+    var bits = [];
+    if(a.category) bits.push(a.category);
+    if(dongText(a)) bits.push(dongText(a));
+    bits.push(localPretty(now));
+    $('#sumMeta').textContent = bits.join(' · ');
+    $('#sumBody').innerHTML = buildSummaryHTML(a);
+  }
+
+  /* ---------- JSON 저장 ---------- */
+  function buildPayload(){
+    var a = collect();
+    var now = new Date();
+    return {
+      form: 'issuljido-store-survey',
+      version: '1.0',
+      submittedAtLocal: localStamp(now),
+      timezone: 'Asia/Seoul',
+      channel: 'kakao-link',
+      answers: {
+        storeName: a.storeName,
+        category: a.category,
+        dong: a.dong,
+        dongOther: a.dongOther,
+        customers: a.customers,
+        customersOther: a.customersOther,
+        times: a.times,
+        timesOther: a.timesOther,
+        praise: a.praise,
+        benefits: a.benefits,
+        crossPromo: a.cross,
+        crossPromoNote: a.crossNote,
+        concerns: a.concerns,
+        concernOther: a.concernOther,
+        mainMenu: a.mainMenu,
+        wantsHelp: a.help,
+        helpTypes: a.helpTypes,
+        gptIntro: a.gpt
+      },
+      answeredCount: (function(){ var f = answeredFlags(); return [1,2,3,4,5,6,7,8].filter(function(q){ return f[q]; }).length; })()
+    };
+  }
+
+  function downloadJSON(){
+    try{
+      var payload = buildPayload();
+      var json = JSON.stringify(payload, null, 2);
+      var blob = new Blob([json], { type: 'application/json;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'issuljido-survey-' + localFileStamp() + '.json';
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){
+        try{ URL.revokeObjectURL(url); }catch(e){}
+        if(a.parentNode) a.parentNode.removeChild(a);
+      }, 1500);
+      toast('응답 파일을 저장했어요 (JSON)');
+      return true;
+    }catch(e){
+      toast('파일 저장이 안 돼요. 요약을 복사해 주세요.');
+      return false;
+    }
+  }
+
+  /* ---------- 완료 / 수정 / 초기화 / 예시 ---------- */
+  function showResult(){
+    goStep(3);
+    $('#survey').hidden = true;
+    var res = $('#result');
+    res.hidden = false;
+    renderSummary();
+    scrollToEl($('.res-head'), 56);
+    var h = $('#resH');
+    if(h){ h.setAttribute('tabindex','-1'); try{ h.focus({ preventScroll:true }); }catch(e){} }
+    toast('요약을 만들었어요. 카톡으로 보내 주세요.');
+  }
+
+  function backToEdit(){
+    $('#result').hidden = true;
+    $('#survey').hidden = false;
+    goStep(3);
+  }
+
+  var SAMPLE = {
+    storeName: '카페 온도',
+    category: '카페',
+    dong: '철산3동',
+    dongOther: '',
+    customers: ['20~30대 직장인', '이웃 주민(연령 다양)'],
+    customersOther: '',
+    times: ['점심 (11시~14시)', '오후 (14시~17시)'],
+    timesOther: '',
+    praise: '“원두 향이 좋아서 자주 와요.” “사장님이 기억해 주셔서 편해요.”',
+    benefits: ['첫 방문·재방문 소액 서비스(음료·토핑·샘플 등)', '도장·스탬프'],
+    cross: '조건부 가능',
+    crossNote: '손님에게 먼저 말씀드린 뒤에만 안내문을 두고 싶어요.',
+    concerns: ['바쁜 시간 응대'],
+    concernOther: '',
+    mainMenu: '직접 내린 콜드브루',
+    help: '원함',
+    helpTypes: ['소개 문구', '사진 보정'],
+    gpt: '한 줄 요약: 철산3동 직장인들의 점심 커피 쉼터.\n단골 혜택: ① 두 번째 방문 시 원두 샘플 ② 스탬프 5개에 아메리카노 1잔\n소개글: 철산3동 골목 안 작은 카페 온도는 매일 아침 직접 내린 콜드브루가 자랑입니다. ...'
+  };
+
+  function fillSample(){
+    var onResult = !$('#result').hidden;
+    apply(SAMPLE);
+    queueSave();
+    if(onResult){
+      renderSummary();
+      toast('예시로 채웠어요. 요약도 새로 만들었어요.');
+    }else{
+      goStep(1);
+      toast('예시로 채웠어요. 자유롭게 고쳐 보세요.');
+    }
+  }
+
+  function resetAll(){
+    $('#survey').reset();
+    store.clear();
+    $('#copyFallback').hidden = true;
+    $('#gptCard').open = false;
+    apply({
+      storeName:'', category:'', dong:'', dongOther:'', customers:[], customersOther:'',
+      times:[], timesOther:'', praise:'', benefits:[], cross:'', crossNote:'',
+      concerns:[], concernOther:'', mainMenu:'', help:'', helpTypes:[], gpt:''
+    });
+    $('#result').hidden = true;
+    $('#survey').hidden = false;
+    goStep(1);
+    toast('처음 상태로 되돌렸어요.');
+  }
+
+  /* ---------- 이벤트 ---------- */
+  function bind(){
+    // 업종 칩
+    $$('.chip[data-cat]').forEach(function(c){
+      c.addEventListener('click', function(){
+        var v = c.getAttribute('data-cat');
+        var input = $('#category');
+        input.value = (input.value.trim() === v) ? '' : v;
+        refreshUI(); queueSave();
+      });
+    });
+
+    // 독점 선택 (잘 모르겠어요 / 특별히 없음 / 아직 미정)
+    $$('input[data-exclusive]').forEach(function(box){
+      box.addEventListener('change', function(){
+        var name = box.name;
+        if(box.checked){
+          $$('input[name="' + name + '"]').forEach(function(o){
+            if(o !== box) o.checked = false;
+          });
+        }
+        refreshUI(); queueSave();
+      });
+    });
+
+    // 같은 그룹에서 일반 항목을 고르면 독점 항목 해제
+    $$('input[type=checkbox][name]').forEach(function(box){
+      if(box.hasAttribute('data-exclusive')) return;
+      box.addEventListener('change', function(){
+        if(!box.checked) return;
+        var ex = $('input[name="' + box.name + '"][data-exclusive]');
+        if(ex && ex.checked){ ex.checked = false; refreshUI(); queueSave(); }
+      });
+    });
+
+    // 폼 전체 변경 감지
+    var form = $('#survey');
+    form.addEventListener('change', function(){ refreshUI(); queueSave(); });
+    form.addEventListener('input', function(){ refreshUI(); queueSave(); });
+
+    // 단계 이동
+    $$('[data-go]').forEach(function(b){
+      b.addEventListener('click', function(){ goStep(Number(b.getAttribute('data-go'))); });
+    });
+
+    // 완료
+    $('#submitBtn').addEventListener('click', showResult);
+
+    // 결과 화면 버튼
+    $('#copySummary').addEventListener('click', function(){
+      var a = collect();
+      copyText(buildSummaryText(a, localPretty(new Date())), '요약을 복사했어요. 카톡에 붙여넣어 주세요.');
+    });
+    $('#saveJson').addEventListener('click', downloadJSON);
+    $('#fillSample').addEventListener('click', fillSample);
+    $('#resetAll').addEventListener('click', resetAll);
+    $('#editAgain').addEventListener('click', backToEdit);
+    $('#copyFallbackClose').addEventListener('click', function(){ $('#copyFallback').hidden = true; });
+
+    // 프롬프트 복사
+    $('#copyPrompt').addEventListener('click', function(){
+      copyText(GPT_PROMPT, '프롬프트를 복사했어요. 카톡 ChatGPT에 붙여넣어 주세요.');
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && !$('#copyFallback').hidden) $('#copyFallback').hidden = true;
+    });
+  }
+
+  /* ---------- 시작 ---------- */
+  function init(){
+    bind();
+    var saved = store.get();
+    if(saved){
+      apply(saved);
+      var s = Number(saved._step) || 1;
+      goStep(s);
+      toast('작성 중이던 내용을 불러왔어요.');
+    }else{
+      refreshUI();
+      goStep(1);
+    }
+    // 숨은 입력으로 인한 자동완성 방지
+    $$('input,textarea').forEach(function(i){ i.setAttribute('autocapitalize','off'); });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+})();
+</script>
+</body>
+</html>
