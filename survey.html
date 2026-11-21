@@ -138,6 +138,26 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 .tips li{display:flex;gap:8px;font-size:13px;line-height:1.5;color:var(--ink-2)}
 .tips li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:8px}
 
+/* ============================================================ intro banner */
+.intro{
+  display:flex;gap:12px;align-items:flex-start;
+  background:linear-gradient(180deg,#F7FBF8,#FFFFFF);
+  border:1.5px solid var(--brand-100);border-radius:var(--r-lg);
+  padding:14px 15px;box-shadow:var(--sh1);margin-bottom:14px;
+}
+.intro-ic{
+  flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  background:var(--brand);color:#fff;font-size:17px;font-weight:900;line-height:1;
+  box-shadow:0 4px 10px rgba(15,107,67,.22);
+}
+.intro strong{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--brand-700)}
+.intro p{font-size:13.5px;line-height:1.6;color:var(--ink-2);margin-top:3px}
+.intro p b{color:var(--brand-700);font-weight:700}
+.intro-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.intro-list li{display:flex;gap:7px;font-size:12.5px;font-weight:600;color:var(--ink-2);line-height:1.5}
+.intro-list li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--brand);margin-top:7px}
+@media (min-width:560px){.intro-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 12px}}
+
 /* ============================================================ cards / questions */
 .card{
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
@@ -484,6 +504,19 @@ select{
   </aside>
 
   <div class="col">
+    <div class="intro" role="note">
+      <span class="intro-ic" aria-hidden="true">?</span>
+      <div>
+        <strong>‘있을지도’는 이런 사업이에요</strong>
+        <p>대형 프랜차이즈에 맞서 <b>광명시 동네 가게와 단골 손님</b>을 연결하는 <b>5~6주 무료 실증 사업</b>(광명시 시민참여 소셜리빙랩)입니다. 참여 비용도, 별도 앱 설치도 없습니다.</p>
+        <ul class="intro-list">
+          <li>지도 등록·소개 무료</li>
+          <li>소개글·사진 정리 지원</li>
+          <li>이웃 가게 교차 추천</li>
+        </ul>
+      </div>
+    </div>
+
     <form id="survey" novalidate autocomplete="off">
 
       <!-- ============================================ STEP 1 -->

@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F6B43">
+<title>있을지도 · 사회연대경제 조직 참여 의향 (약 2~3분)</title>
+<meta name="description" content="광명시 시민참여 소셜리빙랩 '있을지도'는 해봄(haebom.it)의 사회연대경제조직과 동네 단골 상점, 광명시민을 한 지도로 연결하는 5~6주 무료 파일럿 사업입니다. 별도 비용 없이 참여 의향과 연계 방식을 여쭙습니다.">
+<meta property="og:title" content="있을지도 · 사회연대경제 조직 참여 의향">
+<meta property="og:description" content="동네 상점·시민과 잇는 5~6주 무료 파일럿. 참여 의향과 가능한 연계 방식을 2~3분으로 알려 주세요.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F6B43'/%3E%3Cpath d='M16 26s8-6.4 8-12.8A8 8 0 0 0 8 13.2C8 19.6 16 26 16 26Z' fill='%23fff'/%3E%3Ccircle cx='16' cy='13' r='3' fill='%230F6B43'/%3E%3C/svg%3E">
+<style>
+/* ============================================================ tokens */
+:root{
+  --bg:#F4F6F1;
+  --surface:#FFFFFF;
+  --surface-2:#FBFCF9;
+  --ink:#0F2318;
+  --ink-2:#33473C;
+  --muted:#5C6F65;
+  --line:#E1E7DC;
+  --line-2:#EDF1EA;
+  --brand:#0F6B43;
+  --brand-600:#0B5435;
+  --brand-700:#093F28;
+  --brand-50:#E9F3EC;
+  --brand-100:#D5E9DC;
+  --accent:#D97742;
+  --accent-50:#FBEDE3;
+  --danger:#B5452C;
+  --danger-50:#FBEDE9;
+  --sh1:0 1px 2px rgba(15,35,24,.05);
+  --sh2:0 8px 24px rgba(15,35,24,.08);
+  --r-lg:18px;
+  --r-md:14px;
+  --r-sm:10px;
+  --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.6;letter-spacing:-.01em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  word-break:keep-all;overflow-wrap:break-word;
+}
+h1,h2,h3,h4,p,figure,fieldset,legend{margin:0}
+fieldset{border:0;padding:0;min-width:0}
+legend{padding:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2.5px solid var(--brand);outline-offset:2px;border-radius:10px}
+[hidden]{display:none !important}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-64px;z-index:99;background:var(--ink);color:#fff;padding:12px 16px;border-radius:10px;font-size:14px;transition:top .2s}
+.skip:focus{top:12px}
+
+/* ============================================================ hero */
+.hero{
+  background:linear-gradient(158deg,#128055 0%,#0F6B43 52%,#0B5435 100%);
+  color:#fff;padding:18px 0 20px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-90px;width:250px;height:250px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%,rgba(255,255,255,.16),rgba(255,255,255,0) 68%);
+  pointer-events:none;
+}
+.hero-in{max-width:1080px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+.brandrow{display:flex;align-items:center;gap:11px}
+.mark{
+  width:38px;height:38px;border-radius:12px;flex:none;display:grid;place-items:center;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.brand-name .q{color:#F6C29B}
+.brand-sub{display:block;font-size:11px;color:rgba(255,255,255,.76);margin-top:3px;letter-spacing:0;white-space:nowrap}
+.hero-tag{
+  margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.02em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);
+  padding:6px 10px;border-radius:99px;color:#fff;
+}
+.hero h1{font-size:23px;line-height:1.36;font-weight:800;letter-spacing:-.035em;margin:16px 0 8px;max-width:19em}
+.hero .lede{font-size:14.5px;line-height:1.62;color:rgba(255,255,255,.88);max-width:34em}
+.hero .lede b{color:#fff;font-weight:700}
+.meta{list-style:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:14px 0 0}
+.meta li{
+  font-size:12.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:5px 11px 5px 9px;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.meta li::before{content:"";width:5px;height:5px;border-radius:50%;background:#8FE0B4}
+
+/* ============================================================ progress strip */
+.pbar{
+  position:sticky;top:0;z-index:25;background:rgba(255,255,255,.95);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.pbar-in{max-width:1080px;margin:0 auto;padding:9px 16px 10px}
+.pbar-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:7px}
+.pbar-step{font-size:13px;font-weight:800;color:var(--brand-700);letter-spacing:-.01em}
+.pbar-step .of{color:var(--muted);font-weight:600}
+.pbar-name{font-size:12.5px;color:var(--muted);font-weight:600}
+.pbar-count{font-size:12.5px;color:var(--muted);font-weight:700;white-space:nowrap}
+.track{height:6px;border-radius:99px;background:var(--line-2);overflow:hidden}
+.fill{
+  height:100%;width:33%;border-radius:99px;
+  background:linear-gradient(90deg,#14865A,#0F6B43);
+  transition:width .38s cubic-bezier(.4,0,.2,1);
+}
+/* ============================================================ layout */
+.layout{max-width:720px;margin:0 auto;padding:16px 16px 8px;display:block}
+.col{min-width:0}
+
+/* ============================================================ sidebar (desktop) */
+.side{display:none}
+.side-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--sh1);padding:16px;
+}
+.side-card + .side-card{margin-top:14px}
+.side-h{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.steps li{
+  display:flex;align-items:flex-start;gap:10px;padding:9px 10px;border-radius:11px;
+  font-size:14px;color:var(--muted);font-weight:600;line-height:1.4;
+}
+.steps li .n{
+  flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);
+  display:grid;place-items:center;font-size:11.5px;font-weight:800;color:var(--muted);
+  background:#fff;margin-top:1px;
+}
+.steps li .cnt{margin-left:auto;font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap;padding-left:6px}
+.steps li.cur{background:var(--brand-50);color:var(--brand-700)}
+.steps li.cur .n{background:var(--brand);border-color:var(--brand);color:#fff}
+.steps li.done{color:var(--ink-2)}
+.steps li.done .n{background:var(--brand-100);border-color:var(--brand-100);color:var(--brand-700)}
+.tips{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.tips li{display:flex;gap:8px;font-size:13px;line-height:1.5;color:var(--ink-2)}
+.tips li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:8px}
+
+/* ============================================================ intro banner */
+.intro{
+  display:flex;gap:12px;align-items:flex-start;
+  background:linear-gradient(180deg,#F7FBF8,#FFFFFF);
+  border:1.5px solid var(--brand-100);border-radius:var(--r-lg);
+  padding:14px 15px;box-shadow:var(--sh1);margin-bottom:14px;
+}
+.intro-ic{
+  flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  background:var(--brand);color:#fff;font-size:17px;font-weight:900;line-height:1;
+  box-shadow:0 4px 10px rgba(15,107,67,.22);
+}
+.intro strong{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--brand-700)}
+.intro p{font-size:13.5px;line-height:1.6;color:var(--ink-2);margin-top:3px}
+.intro p b{color:var(--brand-700);font-weight:700}
+.intro-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.intro-list li{display:flex;gap:7px;font-size:12.5px;font-weight:600;color:var(--ink-2);line-height:1.5}
+.intro-list li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--brand);margin-top:7px}
+@media (min-width:560px){.intro-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 12px}}
+
+/* ============================================================ cards / questions */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--sh1);padding:18px 16px 20px;
+}
+.card + .card{margin-top:14px}
+.card-h{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.card-h .kicker{
+  font-size:11.5px;font-weight:800;letter-spacing:.05em;color:var(--brand);
+  background:var(--brand-50);border-radius:99px;padding:5px 10px;flex:none;
+}
+.card-h h2{font-size:16px;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+.card-h h2:focus,.res-head h2:focus{outline:none}
+.card-sub{font-size:13.5px;color:var(--muted);margin:6px 0 0;line-height:1.55}
+
+.q{padding-top:20px;margin-top:20px;border-top:1px dashed var(--line)}
+.q:first-of-type{border-top:0;padding-top:14px;margin-top:10px}
+.q-head{display:flex;gap:9px;align-items:flex-start}
+.qno{
+  flex:none;min-width:26px;height:26px;border-radius:9px;background:var(--brand-50);
+  color:var(--brand-700);font-size:12.5px;font-weight:800;display:grid;place-items:center;
+  margin-top:2px;letter-spacing:0;
+}
+.q-head h3{font-size:16.5px;font-weight:800;line-height:1.45;letter-spacing:-.025em;color:var(--ink)}
+.q-tag{
+  font-size:11px;font-weight:700;color:var(--muted);background:var(--surface-2);
+  border:1px solid var(--line);border-radius:99px;padding:2px 7px;margin-left:6px;
+  vertical-align:2px;white-space:nowrap;letter-spacing:0;
+}
+.q-tag.req{color:var(--brand-700);background:var(--brand-50);border-color:var(--brand-100)}
+.q-help{font-size:13.5px;line-height:1.55;color:var(--muted);margin:7px 0 2px 35px}
+.q.is-err .qno{background:var(--danger-50);color:var(--danger)}
+.err-msg{
+  display:flex;align-items:center;gap:7px;margin:12px 0 0;
+  background:var(--danger-50);border:1.5px solid #EDC8BC;border-radius:12px;
+  padding:10px 12px;font-size:13px;font-weight:700;color:var(--danger);line-height:1.45;
+}
+.err-msg::before{content:"!";flex:none;width:18px;height:18px;border-radius:50%;background:var(--danger);color:#fff;font-size:11.5px;font-weight:900;display:grid;place-items:center}
+
+/* fields */
+.field{display:block;margin-top:15px}
+.lbl{display:block;font-size:13px;font-weight:700;color:var(--ink-2);margin-bottom:6px}
+.lbl .opt-tag{font-weight:600;color:var(--muted);font-size:12px;margin-left:4px}
+input[type=text],input[type=tel],input[type=email],select,textarea{
+  display:block;width:100%;min-height:52px;padding:13px 14px;
+  border:1.5px solid var(--line);border-radius:12px;background:#fff;
+  font-size:16px;color:var(--ink);line-height:1.45;
+  transition:border-color .15s,box-shadow .15s,background .15s;
+  -webkit-appearance:none;appearance:none;
+}
+textarea{min-height:104px;resize:vertical;line-height:1.6;padding:12px 14px}
+input::placeholder,textarea::placeholder{color:#93A69B;font-weight:400}
+input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus,select:focus,textarea:focus{
+  border-color:var(--brand);box-shadow:0 0 0 3px rgba(15,107,67,.12);outline:none;
+}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1.2 1.4 7 7.2l5.8-5.8' fill='none' stroke='%235C6F65' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;
+  padding-right:42px;text-overflow:ellipsis;
+}
+.hint{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.5}
+.hint.warm{color:var(--accent);font-weight:600}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+label.chip{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  min-height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:99px;
+  background:#fff;font-size:14px;font-weight:600;color:var(--ink-2);cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s;white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;
+}
+label.chip:hover{border-color:#C3CFC6}
+label.chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:2}
+label.chip.is-on{background:var(--brand-50);border-color:var(--brand);color:var(--brand-700);font-weight:700}
+label.chip.is-on::before{
+  content:"";width:11px;height:6px;border-left:2.5px solid var(--brand);
+  border-bottom:2.5px solid var(--brand);transform:rotate(-45deg) translateY(-1px);
+}
+label.chip:focus-within{outline:2.5px solid var(--brand);outline-offset:2px}
+.q.is-err label.chip{border-color:#E3B8AA}
+
+/* option rows */
+.opts{display:grid;gap:9px;margin-top:10px}
+.opts.two{grid-template-columns:1fr}
+.opt{
+  position:relative;display:flex;align-items:center;gap:11px;min-height:48px;
+  padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;
+  cursor:pointer;transition:background .15s,border-color .15s,box-shadow .1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.opt:hover{border-color:#C9D5CC}
+.opt > input{
+  position:absolute;inset:-1.5px;margin:0;opacity:0;
+  cursor:pointer;z-index:2;
+}
+.opt .box{
+  flex:none;width:22px;height:22px;border:2px solid #C3CFC6;border-radius:7px;
+  background:#fff;display:grid;place-items:center;transition:background .15s,border-color .15s;
+}
+.opt .box::after{
+  content:"";width:10px;height:5px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;
+  transform:rotate(-45deg) translate(1px,-1px);opacity:0;transition:opacity .12s;
+}
+.opt .box.radio{border-radius:50%}
+.opt .box.radio::after{width:10px;height:10px;border:0;border-radius:50%;background:#fff;transform:none}
+.opt .txt{font-size:15px;font-weight:600;color:var(--ink-2);line-height:1.4;letter-spacing:-.015em}
+.opt .txt small{display:block;font-size:12.5px;font-weight:500;color:var(--muted);margin-top:2px;letter-spacing:0}
+.opt.is-on{background:var(--brand-50);border-color:var(--brand)}
+.opt.is-on .box{background:var(--brand);border-color:var(--brand)}
+.opt.is-on .box::after{opacity:1}
+.opt.is-on .txt{color:var(--brand-700);font-weight:700}
+.opt.is-on .txt small{color:#3D6B54;font-weight:500}
+.opt:focus-within{outline:2.5px solid var(--brand);outline-offset:2px}
+.q.is-err .opts .opt{border-color:#E3B8AA}
+
+/* ============================================================ buttons / nav */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:52px;padding:0 20px;border-radius:14px;font-size:16px;font-weight:800;
+  border:1.5px solid transparent;letter-spacing:-.02em;
+  transition:background .15s,border-color .15s,transform .06s,box-shadow .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(15,107,67,.24)}
+.btn.primary:hover{background:var(--brand-600)}
+.btn.ghost{background:#fff;border-color:var(--line);color:var(--ink-2)}
+.btn.ghost:hover{border-color:#C3CFC6;background:var(--surface-2)}
+.btn.tiny{min-height:44px;padding:0 14px;font-size:13.5px;border-radius:12px}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.5;pointer-events:none}
+.nav{
+  position:sticky;bottom:0;z-index:15;display:flex;gap:10px;
+  margin-top:16px;padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));
+  background:var(--bg);border-top:1px solid var(--line-2);
+  box-shadow:0 -10px 24px rgba(15,35,24,.07);
+}
+.nav .btn{flex:1}
+.nav .btn.prev{flex:0 0 auto;min-width:96px}
+.nav .btn.next{flex:1}
+.step-foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;margin-top:14px}
+.step-foot .note{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px;line-height:1.5}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--brand-100);display:inline-block;flex:none}
+
+/* ============================================================ result */
+.result{margin-top:4px}
+.res-head{text-align:center;padding:8px 4px 4px}
+.ok-badge{
+  width:52px;height:52px;margin:0 auto 10px;border-radius:50%;
+  background:var(--brand);color:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 20px rgba(15,107,67,.26);
+}
+.res-head h2{font-size:21px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.res-head p{font-size:14px;color:var(--muted);margin-top:7px;line-height:1.6;max-width:32em;margin-left:auto;margin-right:auto}
+
+.sumcard{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--sh2);overflow:hidden;margin-top:16px;
+}
+.sum-head{background:linear-gradient(158deg,#128055,#0F6B43 60%,#0B5435);color:#fff;padding:15px 18px 16px}
+.sum-head .st{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.82)}
+.sum-head h3{font-size:18px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.sum-head .sm{font-size:12px;color:rgba(255,255,255,.78);margin-top:5px}
+.sum-body{padding:2px 18px 14px}
+.sum-group{padding-top:15px}
+.sum-group > h4{
+  font-size:11.5px;font-weight:800;color:var(--brand);letter-spacing:.05em;
+  padding-bottom:7px;border-bottom:1px solid var(--line-2);margin-bottom:2px;
+}
+.rows{display:grid}
+.row{display:grid;grid-template-columns:1fr;gap:1px;padding:10px 0;border-bottom:1px dashed var(--line-2)}
+.row:last-child{border-bottom:0}
+.row dt{font-size:12px;font-weight:700;color:var(--muted);line-height:1.5;letter-spacing:0}
+.row dd{margin:0;font-size:15px;font-weight:700;color:var(--ink);line-height:1.55;word-break:break-word;letter-spacing:-.015em}
+.row dd.empty{color:#93A69B;font-weight:600}
+.row dd.long{white-space:pre-wrap;font-weight:600;font-size:13.5px}
+.sum-foot{padding:12px 18px 16px;background:var(--surface-2);border-top:1px solid var(--line-2);font-size:12px;color:var(--muted);display:flex;gap:7px;align-items:flex-start;line-height:1.5}
+.actions{display:grid;gap:9px;margin-top:16px}
+.actions .btn{width:100%}
+.demo-row{display:grid;grid-template-columns:1fr;gap:8px;margin-top:2px}
+
+/* copy fallback */
+.fallback{
+  position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:78;
+  width:min(560px,100%);max-height:82vh;overflow:auto;
+  background:var(--accent-50);border:1.5px solid #E8C6AE;border-bottom:0;
+  border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -12px 40px rgba(8,22,15,.26);
+}
+.fallback h4{font-size:14.5px;font-weight:800;color:#8C3A16}
+.fallback p{font-size:13px;color:#8C3A16;margin-top:5px;line-height:1.55}
+.fallback textarea{
+  margin-top:10px;background:#fff;border-color:#E8C6AE;min-height:160px;font-size:13px;
+  font-weight:500;line-height:1.65;
+}
+.fallback .btn{margin-top:9px;width:100%}
+
+/* ============================================================ toast */
+.toast{
+  position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));
+  transform:translate(-50%,10px);z-index:80;
+  background:#0F2318;color:#fff;font-size:14px;font-weight:700;line-height:1.4;
+  padding:12px 18px;border-radius:12px;box-shadow:0 12px 30px rgba(8,22,15,.3);
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+  max-width:calc(100vw - 32px);text-align:center;letter-spacing:-.01em;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ============================================================ footer */
+.foot{max-width:720px;margin:0 auto;padding:8px 16px 34px;text-align:center}
+.foot p{font-size:12px;color:var(--muted);line-height:1.7}
+.foot .sep{margin:0 6px;color:var(--line)}
+.foot a{font-weight:700}
+
+/* ============================================================ steps show/hide */
+.step{display:none}
+.step.on{display:block}
+
+/* ============================================================ responsive */
+@media (min-width:560px){
+  .opts.two{grid-template-columns:1fr 1fr}
+  .card{padding:22px 22px 24px}
+  .hero{padding:24px 0 28px}
+  .hero h1{font-size:27px}
+  .res-head h2{font-size:23px}
+  .row{grid-template-columns:104px minmax(0,1fr);gap:12px;align-items:baseline;padding:9px 0}
+  .row dd{font-size:14.5px}
+  .brand-sub{font-size:11.5px}
+  .demo-row{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1000px){
+  .layout{
+    max-width:1080px;display:grid;grid-template-columns:300px minmax(0,1fr);
+    gap:26px;align-items:start;padding:22px 20px 8px;
+  }
+  .side{display:block;position:sticky;top:64px}
+  .hero-in{padding:0 20px}
+  .hero h1{font-size:29px;max-width:22em}
+  .hero .lede{font-size:15px}
+  .pbar-in{padding:10px 20px 11px}
+  .nav{position:static;background:none;justify-content:flex-end;padding:18px 0 0;margin-top:18px;box-shadow:none;border-top:0}
+  .nav .btn{flex:0 0 auto;min-width:150px;padding:0 26px}
+  .nav .btn.next{flex:0 0 auto;min-width:170px}
+  .row{grid-template-columns:112px minmax(0,1fr)}
+  .row dd{font-size:14.5px}
+  .foot{max-width:1080px;padding-left:20px;padding-right:20px}
+  .toast{bottom:40px}
+  .result .sumcard{margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로 가기</a>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="brandrow">
+      <span class="mark" aria-hidden="true">
+        <svg width="21" height="21" viewBox="0 0 32 32" fill="none"><path d="M16 27s8.5-6.8 8.5-13.4A8.5 8.5 0 0 0 7.5 13.6C7.5 20.2 16 27 16 27Z" fill="#fff"/><circle cx="16" cy="13.4" r="3.1" fill="#128055"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">있을지도 <span class="q">?</span></span>
+        <span class="brand-sub">광명 동네 가게 · 단골 리빙랩</span>
+      </span>
+      <span class="hero-tag">단체·기업</span>
+    </div>
+    <h1>동네 상점과 시민을 잇는<br>새로운 판로, 함께해 보실래요?</h1>
+    <p class="lede">해봄(haebom.it)의 사회연대경제조직과 광명시 동네 가게를 잇는 <b>5~6주 무료 파일럿</b>입니다. 참여 의향만 여쭙습니다.</p>
+    <ul class="meta">
+      <li>로그인·앱 설치 없이</li>
+      <li>6문항 · 약 2~3분</li>
+      <li>비용 없이 참여</li>
+    </ul>
+  </div>
+</header>
+
+<div class="pbar">
+  <div class="pbar-in">
+    <div class="pbar-top">
+      <span class="pbar-step"><span id="pbStep">1</span><span class="of"> / 3단계</span> <span class="pbar-name" id="pbName">· 조직 정보·참여 의향</span></span>
+      <span class="pbar-count" id="pbCount">응답 0 / 6</span>
+    </div>
+    <div class="track" role="progressbar" aria-label="설문 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33" id="pbTrack">
+      <div class="fill" id="pbFill" style="width:33%"></div>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="layout">
+  <aside class="side" aria-label="설문 안내">
+    <div class="side-card">
+      <div class="side-h">진행 상황</div>
+      <ol class="steps" id="steps">
+        <li class="cur" data-s="1"><span class="n">1</span><span>조직 정보·참여 의향</span><span class="cnt" data-cnt="1">0/2</span></li>
+        <li data-s="2"><span class="n">2</span><span>연계 서비스·협력 방식</span><span class="cnt" data-cnt="2">0/3</span></li>
+        <li data-s="3"><span class="n">3</span><span>해봄 정보·한마디</span><span class="cnt" data-cnt="3">0/1</span></li>
+      </ol>
+    </div>
+    <div class="side-card">
+      <div class="side-h">알아두세요</div>
+      <ul class="tips">
+        <li>5~6주 무료 파일럿입니다. 참여 비용·별도 앱 설치가 없어요.</li>
+        <li>응답은 사업 검토와 해봄 등록 정보 보완에만 씁니다.</li>
+        <li>연락처·이메일은 선택이에요. 안내를 받고 싶을 때만 적어 주세요.</li>
+        <li>작성 중인 내용은 이 기기 브라우저에만 잠깐 저장돼요.</li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="col">
+    <div class="intro" role="note">
+      <span class="intro-ic" aria-hidden="true">?</span>
+      <div>
+        <strong>‘있을지도’는 이런 사업이에요</strong>
+        <p>광명시 시민참여 소셜리빙랩 「있을지도」는 <b>해봄(haebom.it)의 사회연대경제조직과 동네 단골 상점, 광명시민</b>을 한 지도로 연결해 지역 내 <b>판로·협업·실증</b>을 넓히는 <b>5~6주 무료 파일럿 사업</b>입니다. 별도 비용 없이 참여 의향과 가능한 연계 방식을 여쭙습니다.</p>
+        <ul class="intro-list">
+          <li>5~6주 무료 파일럿</li>
+          <li>지도 연계·공동 홍보</li>
+          <li>참여 비용 없음</li>
+        </ul>
+      </div>
+    </div>
+
+    <form id="survey" novalidate autocomplete="off">
+
+      <!-- ============================================ STEP 1 -->
+      <section class="step on" data-step="1" aria-labelledby="s1h">
+        <div class="card">
+          <div class="card-h"><span class="kicker">1단계</span><h2 id="s1h">조직 정보 및 참여 의향</h2></div>
+          <p class="card-sub">어느 조직인지, 이번 실증에 함께하실 수 있는지만 여쭤볼게요.</p>
+
+          <!-- Q1 -->
+          <div class="q" id="q1">
+            <div class="q-head">
+              <span class="qno">1</span>
+              <h3>단체·기업 정보를 알려 주세요<span class="q-tag req">필수</span></h3>
+            </div>
+            <p class="q-help">지도에 표시될 기본 정보예요. 연락처·이메일은 선택입니다.</p>
+
+            <label class="field">
+              <span class="lbl">단체·기업명</span>
+              <input type="text" id="orgName" name="orgName" placeholder="예: 해봄 사회적협동조합" maxlength="60" enterkeyhint="next">
+            </label>
+
+            <fieldset>
+              <legend class="lbl" style="margin-top:18px">조직 유형</legend>
+              <div class="chips" role="group" aria-label="조직 유형">
+                <label class="chip"><input type="radio" name="orgType" value="사회적기업"><span>사회적기업</span></label>
+                <label class="chip"><input type="radio" name="orgType" value="예비사회적기업"><span>예비사회적기업</span></label>
+                <label class="chip"><input type="radio" name="orgType" value="협동조합"><span>협동조합</span></label>
+                <label class="chip"><input type="radio" name="orgType" value="사회적협동조합"><span>사회적협동조합</span></label>
+                <label class="chip"><input type="radio" name="orgType" value="마을기업"><span>마을기업</span></label>
+                <label class="chip"><input type="radio" name="orgType" value="자활기업"><span>자활기업</span></label>
+                <label class="chip"><input type="radio" name="orgType" value="기타"><span>기타</span></label>
+              </div>
+            </fieldset>
+            <label class="field" id="orgTypeOtherWrap" hidden>
+              <span class="lbl">조직 유형 직접 입력</span>
+              <input type="text" id="orgTypeOther" name="orgTypeOther" placeholder="예: 사회적협동조합 준비 중, 비영리단체" maxlength="40">
+            </label>
+
+            <label class="field">
+              <span class="lbl">소재 동네</span>
+              <select id="dong" name="dong">
+                <option value="">선택해 주세요</option>
+                <option value="광명1동">광명1동</option>
+                <option value="광명2동">광명2동</option>
+                <option value="광명3동">광명3동</option>
+                <option value="광명4동">광명4동</option>
+                <option value="광명5동">광명5동</option>
+                <option value="광명6동">광명6동</option>
+                <option value="광명7동">광명7동</option>
+                <option value="철산1동">철산1동</option>
+                <option value="철산2동">철산2동</option>
+                <option value="철산3동">철산3동</option>
+                <option value="철산4동">철산4동</option>
+                <option value="하안1동">하안1동</option>
+                <option value="하안2동">하안2동</option>
+                <option value="하안3동">하안3동</option>
+                <option value="하안4동">하안4동</option>
+                <option value="소하1동">소하1동</option>
+                <option value="소하2동">소하2동</option>
+                <option value="일직동">일직동</option>
+                <option value="학온동">학온동</option>
+                <option value="기타">기타 (직접 입력)</option>
+              </select>
+            </label>
+            <label class="field" id="dongOtherWrap" hidden>
+              <span class="lbl">동네 직접 입력</span>
+              <input type="text" id="dongOther" name="dongOther" placeholder="예: 광명역 인근, 옥길동" maxlength="30">
+            </label>
+
+            <div class="opts two" style="margin-top:0">
+              <label class="field">
+                <span class="lbl">담당자 연락처 <span class="opt-tag">선택</span></span>
+                <input type="tel" id="contact" name="contact" placeholder="010-0000-0000" maxlength="20" inputmode="tel">
+              </label>
+              <label class="field">
+                <span class="lbl">이메일 <span class="opt-tag">선택</span></span>
+                <input type="email" id="email" name="email" placeholder="hello@example.org" maxlength="60" inputmode="email" autocomplete="off">
+              </label>
+            </div>
+            <p class="hint">안내를 받고 싶을 때만 적어 주세요. 지도에는 공개되지 않습니다.</p>
+            <p class="err-msg" id="err1" hidden>단체·기업명, 조직 유형, 소재 동네를 확인해 주세요.</p>
+          </div>
+
+          <!-- Q2 -->
+          <div class="q" id="q2">
+            <div class="q-head">
+              <span class="qno">2</span>
+              <h3>「있을지도」 5~6주 실증(지도 연계·공동 홍보)에 참여하실 의향이 있으신가요?<span class="q-tag req">필수</span></h3>
+            </div>
+            <p class="q-help">부담 없이 지금 생각에 가깝게 골라 주세요.</p>
+            <fieldset>
+              <legend class="sr">실증 참여 의향</legend>
+              <div class="opts" role="group">
+                <label class="opt"><input type="radio" name="intent" value="적극 참여하고 싶어요"><span class="box radio" aria-hidden="true"></span><span class="txt">적극 참여하고 싶어요<small>일정만 맞으면 바로 함께할게요</small></span></label>
+                <label class="opt"><input type="radio" name="intent" value="안내를 먼저 듣고 결정할게요"><span class="box radio" aria-hidden="true"></span><span class="txt">안내를 먼저 듣고 결정할게요<small>설명 들은 뒤 정하고 싶어요</small></span></label>
+                <label class="opt"><input type="radio" name="intent" value="이번엔 어렵지만 다음 기회에 관심 있어요"><span class="box radio" aria-hidden="true"></span><span class="txt">이번엔 어렵지만 다음 기회에 관심 있어요<small>일정·여건이 안 맞아요</small></span></label>
+                <label class="opt"><input type="radio" name="intent" value="참여 어려움"><span class="box radio" aria-hidden="true"></span><span class="txt">참여 어려움<small>지금은 어려워요</small></span></label>
+              </div>
+            </fieldset>
+            <p class="err-msg" id="err2" hidden>2번 문항에 답해 주세요. 가장 가까운 생각 하나만 골라 주시면 됩니다.</p>
+          </div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="btn primary next" data-go="2">다음 <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="step-foot">
+          <span class="note"><span class="dot"></span>작성 중인 내용은 이 기기에만 자동 저장돼요</span>
+        </div>
+      </section>
+
+      <!-- ============================================ STEP 2 -->
+      <section class="step" data-step="2" aria-labelledby="s2h">
+        <div class="card">
+          <div class="card-h"><span class="kicker">2단계</span><h2 id="s2h">연계 서비스 및 협력 방식</h2></div>
+          <p class="card-sub">‘있을지도’에서 무엇을 함께할 수 있을지 골라 주세요. 모두 복수 선택이에요.</p>
+
+          <!-- Q3 -->
+          <div class="q" id="q3">
+            <div class="q-head">
+              <span class="qno">3</span>
+              <h3>시민·동네 상점과 연결하고 싶은 주요 서비스·분야는 무엇인가요?<span class="q-tag">복수 선택</span></h3>
+            </div>
+            <p class="q-help">끌리는 분야를 여러 개 눌러 주세요.</p>
+            <fieldset>
+              <legend class="sr">주요 서비스 분야</legend>
+              <div class="chips" role="group" aria-label="서비스 분야">
+                <label class="chip"><input type="checkbox" name="areas" value="돌봄·건강"><span>돌봄·건강</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="교육·체험"><span>교육·체험</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="먹거리·생활용품"><span>먹거리·생활용품</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="환경·수리"><span>환경·수리</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="공간·모임 대여"><span>공간·모임 대여</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="B2B·상점 지원"><span>B2B·상점 지원</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="기타"><span>기타</span></label>
+              </div>
+            </fieldset>
+            <label class="field" id="areaOtherWrap" hidden>
+              <span class="lbl">기타 분야 <span class="opt-tag">선택</span></span>
+              <input type="text" id="areaOther" name="areaOther" placeholder="예: 청년 일자리, 문화예술 프로그램" maxlength="60">
+            </label>
+            <label class="field">
+              <span class="lbl">대표 프로그램·상품 한 줄 <span class="opt-tag">선택</span></span>
+              <input type="text" id="programLine" name="programLine" placeholder="예: 주민과 함께 만드는 제철 반찬 꾸러미" maxlength="80">
+            </label>
+          </div>
+
+          <!-- Q4 -->
+          <div class="q" id="q4">
+            <div class="q-head">
+              <span class="qno">4</span>
+              <h3>가능한 협업·참여 방식은 무엇인가요?<span class="q-tag">복수 선택</span></h3>
+            </div>
+            <p class="q-help">바로 할 수 있는 것부터 골라 주세요. 나중에 조정할 수 있어요.</p>
+            <fieldset>
+              <legend class="sr">협업 방식</legend>
+              <div class="opts" role="group">
+                <label class="opt"><input type="checkbox" name="collab" value="시민·단골 대상 체험/할인 제공"><span class="box" aria-hidden="true"></span><span class="txt">시민·단골 대상 체험/할인 제공<small>프로그램 체험, 단골 할인</small></span></label>
+                <label class="opt"><input type="checkbox" name="collab" value="동네 상점과의 교차 추천·공동 이벤트"><span class="box" aria-hidden="true"></span><span class="txt">동네 상점과의 교차 추천·공동 이벤트<small>서로 손님을 이어 주는 방식</small></span></label>
+                <label class="opt"><input type="checkbox" name="collab" value="시민 문제 해결 실증 테스트"><span class="box" aria-hidden="true"></span><span class="txt">시민 문제 해결 실증 테스트<small>5~6주 동안 작게 시험해 보기</small></span></label>
+                <label class="opt"><input type="checkbox" name="collab" value="기관 공간·채널을 통한 홍보 연계"><span class="box" aria-hidden="true"></span><span class="txt">기관 공간·채널을 통한 홍보 연계<small>공간, 소식지, SNS 등</small></span></label>
+                <label class="opt"><input type="checkbox" name="collab" value="운영팀과 상의해 정하기" data-exclusive><span class="box" aria-hidden="true"></span><span class="txt">운영팀과 상의해 정하기<small>가능한 방식을 함께 찾고 싶어요</small></span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Q5 -->
+          <div class="q" id="q5">
+            <div class="q-head">
+              <span class="qno">5</span>
+              <h3>기대하는 점과 부담·우려 사항은 무엇인가요?<span class="q-tag">복수 선택</span></h3>
+            </div>
+            <p class="q-help">솔직하게 골라 주시면 그 부분을 줄이는 방식으로 준비할게요.</p>
+            <fieldset>
+              <legend class="sr">기대·우려 사항</legend>
+              <div class="opts" role="group">
+                <label class="opt"><input type="checkbox" name="expects" value="지역 내 홍보·신규 이용자 유입"><span class="box" aria-hidden="true"></span><span class="txt">지역 내 홍보·신규 이용자 유입<small>광명 시민에게 알려지고 싶어요</small></span></label>
+                <label class="opt"><input type="checkbox" name="expects" value="타 협동조합·상점과의 네트워킹"><span class="box" aria-hidden="true"></span><span class="txt">타 협동조합·상점과의 네트워킹<small>함께할 파트너를 만나고 싶어요</small></span></label>
+                <label class="opt"><input type="checkbox" name="expects" value="실무 인력·시간 부족"><span class="box" aria-hidden="true"></span><span class="txt">실무 인력·시간 부족<small>담당할 사람이 마땅치 않아요</small></span></label>
+                <label class="opt"><input type="checkbox" name="expects" value="비용·정산 절차 우려"><span class="box" aria-hidden="true"></span><span class="txt">비용·정산 절차 우려<small>추가 비용이 생길까 걱정돼요</small></span></label>
+                <label class="opt"><input type="checkbox" name="expects" value="특별히 없음" data-exclusive><span class="box" aria-hidden="true"></span><span class="txt">특별히 없어요</span></label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="btn ghost prev" data-go="1">← 이전</button>
+          <button type="button" class="btn primary next" data-go="3">다음 <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <!-- ============================================ STEP 3 -->
+      <section class="step" data-step="3" aria-labelledby="s3h">
+        <div class="card">
+          <div class="card-h"><span class="kicker">3단계</span><h2 id="s3h">해봄 정보 보완 및 한마디</h2></div>
+          <p class="card-sub">마지막이에요. 지도에 실릴 정보만 조금 다듬으면 됩니다.</p>
+
+          <!-- Q6 -->
+          <div class="q" id="q6">
+            <div class="q-head">
+              <span class="qno">6</span>
+              <h3>해봄(haebom.it) 등록 정보 중 보완하고 싶은 내용이나 ‘있을지도’에 바라는 점을 적어 주세요.<span class="q-tag">선택</span></h3>
+            </div>
+            <p class="q-help">해당하는 항목을 눌러 주시고, 자세한 내용은 아래에 편하게 적어 주세요.</p>
+            <fieldset>
+              <legend class="sr">보완하고 싶은 항목</legend>
+              <div class="chips" role="group" aria-label="보완 희망 항목">
+                <label class="chip"><input type="checkbox" name="fixItems" value="실제 방문 가능 주소"><span>실제 방문 가능 주소</span></label>
+                <label class="chip"><input type="checkbox" name="fixItems" value="문의 연락처"><span>문의 연락처</span></label>
+                <label class="chip"><input type="checkbox" name="fixItems" value="체험 가능 여부"><span>체험 가능 여부</span></label>
+                <label class="chip"><input type="checkbox" name="fixItems" value="대표 프로그램 소개"><span>대표 프로그램 소개</span></label>
+                <label class="chip"><input type="checkbox" name="fixItems" value="기타"><span>기타</span></label>
+              </div>
+            </fieldset>
+            <label class="field">
+              <span class="sr">보완 내용·바라는 점</span>
+              <textarea id="comment" name="comment" maxlength="600" placeholder="예: 지도에 표시할 주소는 '철산로 12, 1층'이고, 체험은 주말 오전에 가능합니다. / 광명 시민에게 먼저 알려졌으면 좋겠어요."></textarea>
+            </label>
+            <p class="hint">적어 주신 내용은 해봄 등록 정보 보완과 사업 검토 자료로만 씁니다.</p>
+          </div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="btn ghost prev" data-go="2">← 이전</button>
+          <button type="button" class="btn primary" id="submitBtn">설문 완료 및 응답 확인</button>
+        </div>
+        <div class="step-foot">
+          <span class="note"><span class="dot"></span>6번 문항은 비워둔 채로도 완료할 수 있어요.</span>
+        </div>
+      </section>
+    </form>
+
+    <!-- ============================================ RESULT -->
+    <section class="result" id="result" hidden aria-labelledby="resH">
+      <div class="res-head">
+        <div class="ok-badge" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.6 9.6 17 19 7.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 id="resH">응답이 정리되었어요</h2>
+        <p>소중한 의견 감사합니다. 아래 요약을 <b>응답 내용 복사하기</b>로 복사해 카톡·메일로 보내 주세요.</p>
+      </div>
+
+      <div class="sumcard" id="summaryCard">
+        <div class="sum-head">
+          <div class="st">있을지도 · 조직 참여 의향</div>
+          <h3 id="sumTitle">우리 단체</h3>
+          <div class="sm" id="sumMeta">—</div>
+        </div>
+        <div class="sum-body" id="sumBody"></div>
+        <div class="sum-foot">
+          <span aria-hidden="true">🔒</span>
+          <span>이 응답은 ‘있을지도’ 사업 검토와 해봄 등록 정보 보완에만 쓰여요. 연락처는 지도에 공개되지 않습니다.</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" id="copySummary">📋 응답 내용 복사하기</button>
+        <button type="button" class="btn ghost" id="saveJson">💾 응답 파일(JSON) 저장</button>
+        <div class="demo-row">
+          <button type="button" class="btn ghost tiny" id="editAgain">← 응답 수정하기</button>
+          <button type="button" class="btn ghost tiny" id="restart">다시 작성</button>
+        </div>
+        <p class="hint" style="text-align:center">복사한 내용은 카톡 대화방이나 메일 본문에 그대로 붙여넣으면 됩니다.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>있을지도 <span class="sep">·</span> 광명시 시민참여 소셜리빙랩 6팀(C-2) <span class="sep">·</span> 해봄(haebom.it) 연계</p>
+  <p style="margin-top:4px">문의는 운영팀 카톡·메일로 주세요.</p>
+  <p style="margin-top:4px"><a href="index.html">동네 지도 보기 →</a></p>
+</footer>
+
+<div class="fallback" id="copyFallback" hidden role="dialog" aria-label="복사 도우미">
+  <h4>자동 복사가 안 됐어요</h4>
+  <p>아래 글을 길게 눌러 <b>전체 선택 → 복사</b>한 뒤, 카톡에 붙여넣으면 돼요.</p>
+  <textarea id="copyFallbackText" readonly spellcheck="false"></textarea>
+  <button type="button" class="btn ghost tiny" id="copyFallbackClose">닫기</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+
+  var KEY = 'issuljido_org_survey_v1';
+  var STEP_NAMES = {1:'조직 정보·참여 의향', 2:'연계 서비스·협력 방식', 3:'해봄 정보·한마디'};
+
+  function $(sel, root){ return (root || document).querySelector(sel); }
+  function $$(sel, root){ return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function pad2(n){ return (n < 10 ? '0' : '') + n; }
+  function localStamp(d){
+    d = d || new Date();
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()) +
+           ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+  function localFileStamp(d){
+    d = d || new Date();
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()) +
+           '-' + pad2(d.getHours()) + pad2(d.getMinutes());
+  }
+  function localPretty(d){
+    d = d || new Date();
+    return d.getFullYear() + '. ' + pad2(d.getMonth() + 1) + '. ' + pad2(d.getDate()) +
+           ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+
+  /* ---------- localStorage ---------- */
+  var store = {
+    get: function(){
+      try{
+        var raw = window.localStorage.getItem(KEY);
+        if(!raw) return null;
+        var o = JSON.parse(raw);
+        return (o && typeof o === 'object') ? o : null;
+      }catch(e){ return null; }
+    },
+    set: function(obj){
+      try{ window.localStorage.setItem(KEY, JSON.stringify(obj)); return true; }
+      catch(e){ return false; }
+    },
+    clear: function(){
+      try{ window.localStorage.removeItem(KEY); }catch(e){}
+    }
+  };
+
+  /* ---------- toast ---------- */
+  var toastEl = $('#toast'), toastTimer = null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('on');
+    if(toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('on'); }, 2800);
+  }
+
+  /* ---------- 읽기 도우미 ---------- */
+  function val(id){ var el = document.getElementById(id); return el ? String(el.value || '').trim() : ''; }
+  function getChecks(name){
+    return $$('input[name="' + name + '"]').filter(function(i){ return i.checked; })
+      .map(function(i){ return i.value; });
+  }
+  function radioVal(name){
+    var el = $('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+
+  function collect(){
+    return {
+      orgName: val('orgName'),
+      orgType: radioVal('orgType'),
+      orgTypeOther: val('orgTypeOther'),
+      dong: val('dong'),
+      dongOther: val('dongOther'),
+      contact: val('contact'),
+      email: val('email'),
+      intent: radioVal('intent'),
+      areas: getChecks('areas'),
+      areaOther: val('areaOther'),
+      programLine: val('programLine'),
+      collab: getChecks('collab'),
+      expects: getChecks('expects'),
+      fixItems: getChecks('fixItems'),
+      comment: val('comment')
+    };
+  }
+
+  function setVal(id, v){
+    var el = document.getElementById(id);
+    if(el) el.value = (v === undefined || v === null) ? '' : String(v);
+  }
+  function setChecks(name, arr){
+    arr = arr || [];
+    $$('input[name="' + name + '"]').forEach(function(i){ i.checked = arr.indexOf(i.value) > -1; });
+  }
+  function apply(a){
+    if(!a) return;
+    setVal('orgName', a.orgName);
+    setChecks('orgType', a.orgType ? [a.orgType] : []);
+    setVal('orgTypeOther', a.orgTypeOther);
+    setVal('dong', a.dong);
+    setVal('dongOther', a.dongOther);
+    setVal('contact', a.contact);
+    setVal('email', a.email);
+    setChecks('intent', a.intent ? [a.intent] : []);
+    setChecks('areas', a.areas);
+    setVal('areaOther', a.areaOther);
+    setVal('programLine', a.programLine);
+    setChecks('collab', a.collab);
+    setChecks('expects', a.expects);
+    setChecks('fixItems', a.fixItems);
+    setVal('comment', a.comment);
+    clearErrors();
+    refreshUI();
+  }
+
+  /* ---------- 화면 동기화 ---------- */
+  function syncOptionStyles(){
+    $$('.opt').forEach(function(lab){
+      var inp = lab.querySelector('input');
+      if(!inp) return;
+      lab.classList.toggle('is-on', inp.checked);
+    });
+    $$('label.chip').forEach(function(lab){
+      var inp = lab.querySelector('input');
+      if(!inp) return;
+      lab.classList.toggle('is-on', inp.checked);
+    });
+  }
+
+  function updateConditionals(){
+    var show = function(id, on){ var el = document.getElementById(id); if(el) el.hidden = !on; };
+    show('orgTypeOtherWrap', radioVal('orgType') === '기타');
+    show('dongOtherWrap', val('dong') === '기타');
+    show('areaOtherWrap', getChecks('areas').indexOf('기타') > -1);
+  }
+
+  /* ---------- 문항별 응답 여부 ---------- */
+  function answeredFlags(){
+    var a = collect();
+    return {
+      1: !!(a.orgName && a.orgType && a.dong),
+      2: !!a.intent,
+      3: !!(a.areas.length || a.areaOther || a.programLine),
+      4: !!a.collab.length,
+      5: !!a.expects.length,
+      6: !!(a.fixItems.length || a.comment)
+    };
+  }
+
+  var STEP_Qs = {1:[1,2], 2:[3,4,5], 3:[6]};
+  var currentStep = 1;
+
+  function refreshUI(){
+    syncOptionStyles();
+    updateConditionals();
+    var f = answeredFlags();
+    var total = 0;
+    [1,2,3].forEach(function(s){
+      var n = STEP_Qs[s].filter(function(q){ return f[q]; }).length;
+      total += n;
+      var li = $('.steps li[data-s="' + s + '"]');
+      if(!li) return;
+      var cnt = li.querySelector('.cnt');
+      if(cnt) cnt.textContent = n + '/' + STEP_Qs[s].length;
+      li.classList.toggle('done', n === STEP_Qs[s].length);
+      li.classList.toggle('cur', s === currentStep);
+    });
+    var cntEl = $('#pbCount');
+    if(cntEl) cntEl.textContent = '응답 ' + total + ' / 6';
+    if($('#result') && !$('#result').hidden) renderSummary();
+    return total;
+  }
+
+  function scrollToEl(el, off){
+    if(!el) return;
+    var top = el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0) - (off || 56);
+    if(top < 0) top = 0;
+    try{ window.scrollTo({ top: top, behavior: 'smooth' }); }catch(e){ window.scrollTo(0, top); }
+  }
+
+  function goStep(n, noScroll){
+    n = Math.min(3, Math.max(1, n));
+    currentStep = n;
+    $$('.step').forEach(function(s){
+      var on = Number(s.getAttribute('data-step')) === n;
+      s.classList.toggle('on', on);
+      s.hidden = !on;
+    });
+    $('#pbStep').textContent = String(n);
+    $('#pbName').textContent = '· ' + STEP_NAMES[n];
+    var pct = Math.round(n / 3 * 100);
+    $('#pbFill').style.width = pct + '%';
+    var track = $('#pbTrack');
+    if(track) track.setAttribute('aria-valuenow', String(pct));
+    $$('.steps li').forEach(function(li){
+      li.classList.toggle('cur', Number(li.getAttribute('data-s')) === n);
+    });
+    if(!noScroll){
+      if(n === 1){
+        try{ window.scrollTo({ top: 0, behavior: 'smooth' }); }catch(e){ window.scrollTo(0, 0); }
+      }else{
+        scrollToEl($('.step[data-step="' + n + '"] .card'), 56);
+      }
+      var h = $('.step[data-step="' + n + '"] .card-h h2');
+      if(h){ h.setAttribute('tabindex', '-1'); try{ h.focus({ preventScroll: true }); }catch(e){} }
+    }
+    refreshUI();
+    queueSave();
+  }
+
+  /* ---------- 필수 입력 검증 ---------- */
+  var REQUIRED = {
+    1: function(){ return !!(val('orgName') && radioVal('orgType') && val('dong')); },
+    2: function(){ return !!radioVal('intent'); }
+  };
+  function clearError(q){
+    var el = document.getElementById('q' + q);
+    if(el) el.classList.remove('is-err');
+    var m = document.getElementById('err' + q);
+    if(m) m.hidden = true;
+  }
+  function clearErrors(){
+    Object.keys(REQUIRED).forEach(function(q){ clearError(Number(q)); });
+  }
+  function showError(q){
+    var el = document.getElementById('q' + q);
+    if(el) el.classList.add('is-err');
+    var m = document.getElementById('err' + q);
+    if(m) m.hidden = false;
+  }
+  function validateStep(step){
+    var bad = STEP_Qs[step].filter(function(q){
+      if(!REQUIRED[q]) return false;
+      return !REQUIRED[q]();
+    });
+    Object.keys(REQUIRED).forEach(function(q){ clearError(Number(q)); });
+    if(!bad.length) return true;
+    bad.forEach(showError);
+    var first = bad[0];
+    var qEl = document.getElementById('q' + first);
+    toast(first === 1 ? '단체·기업명, 조직 유형, 소재 동네를 확인해 주세요.' : first + '번 문항에 답해 주세요.');
+    if(qEl){
+      scrollToEl(qEl, 76);
+      var focusEl = qEl.querySelector('input, select, textarea');
+      if(focusEl){ try{ focusEl.focus({ preventScroll: true }); }catch(e){} }
+    }
+    return false;
+  }
+
+  /* ---------- 초안 저장 ---------- */
+  var saveTimer = null;
+  function queueSave(){
+    if(saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){
+      var a = collect();
+      var has = !!(a.orgName || a.orgType || a.dong || a.contact || a.email || a.intent ||
+                   (a.areas && a.areas.length) || a.programLine ||
+                   (a.collab && a.collab.length) || (a.expects && a.expects.length) ||
+                   (a.fixItems && a.fixItems.length) || a.comment);
+      if(!has){ store.clear(); return; }
+      a._step = currentStep;
+      a._savedAt = localStamp();
+      store.set(a);
+    }, 220);
+  }
+
+  /* ---------- 복사 ---------- */
+  function legacyCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', 'readonly');
+    ta.style.position = 'fixed';
+    ta.style.top = '0';
+    ta.style.left = '0';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    var ok = false;
+    try{
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      ok = document.execCommand('copy');
+    }catch(e){ ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copyText(text, okMsg){
+    return new Promise(function(resolve){
+      var done = function(ok){
+        if(ok){ toast(okMsg || '복사했어요. 카톡에 붙여넣어 주세요.'); }
+        resolve(ok);
+      };
+      var fallback = function(){
+        var ok = legacyCopy(text);
+        if(!ok){
+          var fb = $('#copyFallback'), ta = $('#copyFallbackText');
+          if(fb && ta){
+            ta.value = text;
+            fb.hidden = false;
+            try{ ta.focus(); ta.select(); }catch(e){}
+            fb.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          }
+        }
+        done(ok);
+      };
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ fallback(); });
+        }else{ fallback(); }
+      }catch(e){ fallback(); }
+    });
+  }
+
+  /* ---------- 요약 ---------- */
+  function dongText(a){
+    if(a.dong === '기타') return a.dongOther || '기타(미기재)';
+    return a.dong;
+  }
+  function orgTypeText(a){
+    if(a.orgType === '기타') return a.orgTypeOther ? '기타(' + a.orgTypeOther + ')' : '기타';
+    return a.orgType;
+  }
+  function listText(arr, other){
+    var parts = (arr || []).slice();
+    if(other) parts.push(other);
+    return parts.join(', ');
+  }
+
+  function summaryGroups(a){
+    return [
+      { title:'조직 정보', rows:[
+        ['단체·기업명', a.orgName],
+        ['조직 유형', orgTypeText(a)],
+        ['소재 동네', dongText(a)],
+        ['담당자 연락처', a.contact],
+        ['이메일', a.email]
+      ]},
+      { title:'참여 의향', rows:[
+        ['5~6주 실증 참여', a.intent]
+      ]},
+      { title:'연계 서비스 · 협력 방식', rows:[
+        ['주요 서비스·분야', listText(a.areas, a.areaOther)],
+        ['대표 프로그램·상품', a.programLine],
+        ['가능한 협업 방식', listText(a.collab, '')],
+        ['기대·우려 사항', listText(a.expects, '')]
+      ]},
+      { title:'해봄 정보 · 한마디', onlyIf:!!(a.fixItems.length || a.comment), rows:[
+        ['보완 희망 항목', listText(a.fixItems, '')],
+        ['보완 내용·바라는 점', a.comment]
+      ]}
+    ];
+  }
+
+  function buildSummaryText(a, stamp){
+    var out = [];
+    out.push('🌿 있을지도 · 사회연대경제 조직 의향');
+    out.push(stamp);
+    out.push('');
+    summaryGroups(a).forEach(function(g){
+      if(g.onlyIf === false) return;
+      var rows = g.rows.filter(function(r){ return r[1]; });
+      if(!rows.length) return;
+      out.push('▸ ' + g.title);
+      rows.forEach(function(r){ out.push('· ' + r[0] + ': ' + r[1]); });
+      out.push('');
+    });
+    out.push('— 보낸 곳: 있을지도 운영팀 (광명시 소셜리빙랩 6팀 C-2)');
+    return out.join('\n');
+  }
+
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+
+  function buildSummaryHTML(a){
+    var html = '';
+    summaryGroups(a).forEach(function(g){
+      if(g.onlyIf === false) return;
+      html += '<div class="sum-group"><h4>' + esc(g.title) + '</h4><dl class="rows">';
+      g.rows.forEach(function(r){
+        var v = r[1];
+        var cls = 'empty', content = '— 미응답';
+        if(v){ cls = (String(v).length > 40 ? 'long' : ''); content = esc(v); }
+        html += '<div class="row"><dt>' + esc(r[0]) + '</dt><dd class="' + cls + '">' + content.replace(/\n/g, '<br>') + '</dd></div>';
+      });
+      html += '</dl></div>';
+    });
+    return html;
+  }
+
+  function renderSummary(){
+    var a = collect();
+    var now = new Date();
+    $('#sumTitle').textContent = a.orgName || '이름 없는 단체';
+    var bits = [];
+    if(a.orgType) bits.push(orgTypeText(a));
+    if(dongText(a)) bits.push(dongText(a));
+    bits.push(localPretty(now));
+    $('#sumMeta').textContent = bits.join(' · ');
+    $('#sumBody').innerHTML = buildSummaryHTML(a);
+  }
+
+  /* ---------- JSON ---------- */
+  function buildPayload(){
+    var a = collect();
+    var now = new Date();
+    return {
+      form: 'issuljido-org-survey',
+      version: '1.0',
+      submittedAtLocal: localStamp(now),
+      timezone: 'Asia/Seoul',
+      channel: 'kakao-link',
+      answers: {
+        orgName: a.orgName,
+        orgType: a.orgType,
+        orgTypeOther: a.orgTypeOther,
+        dong: a.dong,
+        dongOther: a.dongOther,
+        contact: a.contact,
+        email: a.email,
+        participateIntent: a.intent,
+        serviceAreas: a.areas,
+        serviceAreaOther: a.areaOther,
+        programLine: a.programLine,
+        collabWays: a.collab,
+        expectations: a.expects,
+        fixItems: a.fixItems,
+        comment: a.comment
+      },
+      answeredCount: (function(){ var f = answeredFlags(); return [1,2,3,4,5,6].filter(function(q){ return f[q]; }).length; })()
+    };
+  }
+
+  function downloadJSON(){
+    try{
+      var payload = buildPayload();
+      var json = JSON.stringify(payload, null, 2);
+      var blob = new Blob([json], { type: 'application/json;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'issuljido-org-survey-' + localFileStamp() + '.json';
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){
+        try{ URL.revokeObjectURL(url); }catch(e){}
+        if(a.parentNode) a.parentNode.removeChild(a);
+      }, 1500);
+      toast('응답 파일을 저장했어요 (JSON)');
+      return true;
+    }catch(e){
+      toast('파일 저장이 안 돼요. 응답 내용을 복사해 주세요.');
+      return false;
+    }
+  }
+
+  /* ---------- 완료 / 수정 / 초기화 ---------- */
+  function showResult(){
+    if(!validateStep(3)) return;
+    $('#survey').hidden = true;
+    var res = $('#result');
+    res.hidden = false;
+    renderSummary();
+    scrollToEl($('.res-head'), 56);
+    var h = $('#resH');
+    if(h){ h.setAttribute('tabindex','-1'); try{ h.focus({ preventScroll:true }); }catch(e){} }
+    toast('응답을 정리했어요. 복사해서 보내 주세요.');
+    try{ window.scrollTo({ top: 0, behavior: 'smooth' }); }catch(e){ window.scrollTo(0, 0); }
+  }
+
+  function backToEdit(){
+    $('#result').hidden = true;
+    $('#survey').hidden = false;
+    goStep(3);
+    refreshUI();
+  }
+
+  function restart(){
+    $('#survey').reset();
+    store.clear();
+    $('#copyFallback').hidden = true;
+    apply({orgName:'', orgType:'', orgTypeOther:'', dong:'', dongOther:'', contact:'', email:'',
+           intent:'', areas:[], areaOther:'', programLine:'', collab:[], expects:[], fixItems:[], comment:''});
+    clearErrors();
+    $('#result').hidden = true;
+    $('#survey').hidden = false;
+    goStep(1);
+    toast('처음부터 다시 작성할 수 있어요.');
+  }
+
+  /* ---------- 이벤트 ---------- */
+  function bind(){
+    // 독점 선택 (운영팀과 상의 / 특별히 없음)
+    $$('input[data-exclusive]').forEach(function(box){
+      box.addEventListener('change', function(){
+        if(box.checked){
+          $$('input[name="' + box.name + '"]').forEach(function(o){
+            if(o !== box) o.checked = false;
+          });
+        }
+        refreshUI(); queueSave();
+      });
+    });
+    $$('input[type=checkbox][name]').forEach(function(box){
+      if(box.hasAttribute('data-exclusive')) return;
+      box.addEventListener('change', function(){
+        if(!box.checked) return;
+        var ex = $('input[name="' + box.name + '"][data-exclusive]');
+        if(ex && ex.checked){ ex.checked = false; refreshUI(); queueSave(); }
+      });
+    });
+
+    var form = $('#survey');
+    form.addEventListener('change', function(e){
+      var t = e.target;
+      if(t && (t.name === 'orgName' || t.name === 'orgType' || t.name === 'dong')){
+        if(val('orgName') && radioVal('orgType') && val('dong')) clearError(1);
+      }
+      if(t && t.name === 'intent') clearError(2);
+      refreshUI(); queueSave();
+    });
+    form.addEventListener('input', function(e){
+      var t = e.target;
+      if(t && t.name === 'orgName'){
+        if(val('orgName') && radioVal('orgType') && val('dong')) clearError(1);
+      }
+      refreshUI(); queueSave();
+    });
+
+    $$('[data-go]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var to = Number(b.getAttribute('data-go'));
+        if(to > currentStep && !validateStep(currentStep)) return;
+        goStep(to);
+      });
+    });
+
+    $('#submitBtn').addEventListener('click', function(e){ e.preventDefault(); showResult(); });
+
+    $('#copySummary').addEventListener('click', function(){
+      var a = collect();
+      copyText(buildSummaryText(a, localPretty(new Date())), '응답 내용을 복사했어요. 카톡에 붙여넣어 주세요.');
+    });
+    $('#saveJson').addEventListener('click', downloadJSON);
+    $('#editAgain').addEventListener('click', backToEdit);
+    $('#restart').addEventListener('click', restart);
+    $('#copyFallbackClose').addEventListener('click', function(){ $('#copyFallback').hidden = true; });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && !$('#copyFallback').hidden) $('#copyFallback').hidden = true;
+    });
+  }
+
+  /* ---------- 시작 ---------- */
+  function init(){
+    bind();
+    var saved = store.get();
+    if(saved && (saved.orgName || saved.orgType || saved.dong || saved.intent)){
+      apply(saved);
+      var s = Number(saved._step) || 1;
+      goStep(s, true);
+      toast('작성 중이던 내용을 불러왔어요.');
+    }else{
+      refreshUI();
+      goStep(1, true);
+    }
+    $$('input,textarea').forEach(function(i){ i.setAttribute('autocapitalize','off'); });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+})();
+</script>
+</body>
+</html>
